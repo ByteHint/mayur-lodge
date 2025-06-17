@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import AboutUsPage from './sections/About';
 import FacilitiesServices from './sections/Facilities';
 import PromoBanner from './sections/PromoBanner';
+import LocationSection from './sections/Location';
 
 export default function Home() {
   return (
@@ -34,6 +35,10 @@ export default function Home() {
 
       <div id='facilities'>
         <FacilitiesServices/>
+      </div>
+
+      <div id='location'> 
+        <LocationSection/>
       </div>
     </div>
   );
