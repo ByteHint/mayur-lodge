@@ -1,15 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import localFont from 'next/font/local';
-import {
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs';
-import { Phone } from 'lucide-react';
 
 const aderoTrial = localFont({
   src: '../fonts/AderotrialRegular-ZVreq.otf',
@@ -19,41 +12,37 @@ const aderoTrial = localFont({
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-black/70 text-white backdrop-blur-[8px]">
-      <div className="relative flex flex-col md:flex-row justify-between items-center px-6 py-4 gap-4">
+    <div className="sticky top-0 z-50 w-full bg-gradient-to-b from-black via-black/90 to-black/70 text-white shadow-md backdrop-blur">
+      <div className="flex items-center justify-between px-6 py-4 w-full">
         
-        <div className={`${aderoTrial.className} text-[14px] font-bold uppercase`}>
-          <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            Mayur Lodge
-          </Link>
+        {/* Left - Logo */}
+        <div className={`${aderoTrial.className} text-2xl font-bold uppercase`}>
+          <Link href="/">Mayur Lodge</Link>
         </div>
 
-        <div className= {`${aderoTrial.className} flex flex-wrap gap-4 justify-center text-[14px] uppercase`}>
-          <Link href="#about" className="hover:text-yellow-300">About Us</Link>
-          <Link href="#facilities" className="hover:text-yellow-300">Facilities & Services</Link>
-          <Link href="#gallery" className="hover:text-yellow-300">Gallery</Link>
-          <Link href="#location" className="hover:text-yellow-300">Location</Link>
-          <Link href="#menu" className="hover:text-yellow-300">Menu</Link>
-          <Phone/>
+        {/* Center - Navigation Links */}
+        <div className={`hidden md:flex gap-8 text-sm font-medium ${aderoTrial.className}`}>
+          <Link href="/#about" className="hover:text-yellow-300 transition">About Us</Link>
+          <Link href="/#facilities" className="hover:text-yellow-300 transition">Facilities & Services</Link>
+          <Link href="/#gallery" className="hover:text-yellow-300 transition">Gallery</Link>
+          <Link href="/#location" className="hover:text-yellow-300 transition">Location</Link>
+          <Link href="/#menu" className="hover:text-yellow-300 transition">Menu</Link>
         </div>
 
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button className="px-4 py-1 rounded-full bg-white text-black text-xs font-semibold">
-                Sign In
-              </button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <button className="px-4 py-1 rounded-full bg-white text-black text-xs font-semibold">
-                Sign Up
-              </button>
-            </SignUpButton>
-          </SignedOut>
-
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+        {/* Right - SignIn/SignUp Buttons */}
+        <div className="flex items-center gap-4">
+          <SignInButton>
+            <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition text-sm">
+              Sign In
+            </button>
+          </SignInButton>
+          <SignUpButton>
+            <button className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500 transition text-sm">
+              Sign Up
+            </button>
+          </SignUpButton>
+        </div>
       </div>
-    </nav>
+    </div>
   );
 }
