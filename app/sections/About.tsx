@@ -1,11 +1,10 @@
-import Image from "next/image";
-import localFont from "next/font/local";
-
+import Image from 'next/image';
+import localFont from 'next/font/local';
 
 const aderoTrial = localFont({
-  src: "../fonts/AderotrialRegular-ZVreq.otf",
-  variable: "--font-adero-trial",
-  display: "swap",
+  src: '../fonts/AderotrialRegular-ZVreq.otf',
+  variable: '--font-adero-trial',
+  display: 'swap',
 });
 
 export default function AboutUsPage() {
@@ -18,7 +17,7 @@ export default function AboutUsPage() {
           alt="Hotel Background"
           fill
           sizes="100vw"
-          className="object-cover w-full h-full blur-sm brightness-75"
+          className="object-cover w-full h-full blur-sm brightness-75 will-change-transform"
           priority
         />
       </div>
