@@ -3,8 +3,8 @@
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 
 const center = {
-  lat: 18.7557,  // Chakan example
-  lng: 73.7209,
+  lat: 18.73068361094374,  // Chakan example
+  lng: 73.849170538083,
 };
 
 export default function LocationSection() {

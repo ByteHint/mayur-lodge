@@ -1,58 +1,103 @@
-'use client';
+"use client"
 
-import { useState } from 'react';
+import * as React from "react"
+import { ChevronDownIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
 export function Calendar26() {
-  const [arrivalDate, setArrivalDate] = useState('');
-  const [arrivalTime, setArrivalTime] = useState('');
-  const [departureDate, setDepartureDate] = useState('');
-  const [departureTime, setDepartureTime] = useState('');
+  const [openFrom, setOpenFrom] = React.useState(false)
+  const [openTo, setOpenTo] = React.useState(false)
+  const [dateFrom, setDateFrom] = React.useState<Date | undefined>(new Date("2025-06-01"))
+  const [dateTo, setDateTo] = React.useState<Date | undefined>(new Date("2025-06-03"))
 
   return (
-    <div className="flex flex-wrap sm:flex-nowrap gap-3 w-full justify-center sm:justify-start">
-      {/* Arrival Date */}
-      <div className="flex flex-col w-full sm:w-auto">
-        <label className="text-sm mb-1 font-semibold text-black">Arrival Date</label>
-        <input
-          type="date"
-          value={arrivalDate}
-          onChange={(e) => setArrivalDate(e.target.value)}
-          className="bg-white text-black px-3 py-2 rounded border border-gray-300 w-full sm:w-[160px]"
-        />
+    <div className="flex flex-col md:flex-row gap-6 w-full">
+      {/* Check-in */}
+      <div className="flex-1">
+        <Label htmlFor="date-from" className="text-white font-semibold mb-1 block">
+          Check-in
+        </Label>
+        <div className="flex gap-2">
+          <Popover open={openFrom} onOpenChange={setOpenFrom}>
+            <PopoverTrigger asChild>
+              <Button variant="outline" id="date-from" className="flex-1 justify-between font-normal min-w-[150px]">
+                {dateFrom
+                  ? dateFrom.toLocaleDateString("en-US", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })
+                  : "Select date"}
+                <ChevronDownIcon className="ml-2 h-4 w-4" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0" align="start">
+              <Calendar
+                mode="single"
+                selected={dateFrom}
+                captionLayout="dropdown"
+                onSelect={(date) => {
+                  setDateFrom(date)
+                  setOpenFrom(false)
+                }}
+              />
+            </PopoverContent>
+          </Popover>
+          <Input
+            type="time"
+            id="time-from"
+            step="1"
+            defaultValue="10:30:00"
+            className="w-[110px] bg-white text-black border border-gray-300"
+          />
+        </div>
       </div>
 
-      {/* Arrival Time */}
-      <div className="flex flex-col w-full sm:w-auto">
-        <label className="text-sm mb-1 font-semibold text-black">Time</label>
-        <input
-          type="time"
-          value={arrivalTime}
-          onChange={(e) => setArrivalTime(e.target.value)}
-          className="bg-white text-black px-3 py-2 rounded border border-gray-300 w-full sm:w-[120px]"
-        />
-      </div>
-
-      {/* Departure Date */}
-      <div className="flex flex-col w-full sm:w-auto">
-        <label className="text-sm mb-1 font-semibold text-black">Departure Date</label>
-        <input
-          type="date"
-          value={departureDate}
-          onChange={(e) => setDepartureDate(e.target.value)}
-          className="bg-white text-black px-3 py-2 rounded border border-gray-300 w-full sm:w-[160px]"
-        />
-      </div>
-
-      {/* Departure Time */}
-      <div className="flex flex-col w-full sm:w-auto">
-        <label className="text-sm mb-1 font-semibold text-black">Time</label>
-        <input
-          type="time"
-          value={departureTime}
-          onChange={(e) => setDepartureTime(e.target.value)}
-          className="bg-white text-black px-3 py-2 rounded border border-gray-300 w-full sm:w-[120px]"
-        />
+      {/* Check-out */}
+      <div className="flex-1">
+        <Label htmlFor="date-to" className="text-white font-semibold mb-1 block">
+          Check-out
+        </Label>
+        <div className="flex gap-2">
+          <Popover open={openTo} onOpenChange={setOpenTo}>
+            <PopoverTrigger asChild>
+              <Button variant="outline" id="date-to" className="flex-1 justify-between font-normal min-w-[150px]">
+                {dateTo
+                  ? dateTo.toLocaleDateString("en-US", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })
+                  : "Select date"}
+                <ChevronDownIcon className="ml-2 h-4 w-4" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0" align="start">
+              <Calendar
+                mode="single"
+                selected={dateTo}
+                captionLayout="dropdown"
+                onSelect={(date) => {
+                  setDateTo(date)
+                  setOpenTo(false)
+                }}
+                disabled={dateFrom && { before: dateFrom }}
+              />
+            </PopoverContent>
+          </Popover>
+          <Input
+            type="time"
+            id="time-to"
+            step="1"
+            defaultValue="12:30:00"
+            className="w-[110px] bg-white text-black border border-gray-300"
+          />
+        </div>
       </div>
     </div>
-  );
+  )
 }
