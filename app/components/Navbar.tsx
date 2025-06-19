@@ -18,11 +18,11 @@ const kugile = localFont({
 
 export default function Navbar() {
   return (
-    <div className="sticky top-0 z-50 bg-white text-[#3C3C3C] w-full border-b border-gray-200">
-      <div className="flex items-center justify-between px-6 py-3 max-w-[1440px] mx-auto">
-        
+    <div className="sticky top-0 z-50 bg-white text-[#3C3C3C] w-full">
+      <div className="flex items-center justify-between px-6 md:px-16 h-[72px] max-w-[1440px] mx-auto pt-6">
+
         {/* Left - Logo */}
-        <div className={`${kugile.className} text-2xl font-bold tracking-widest`}>
+        <div className={`${kugile.className} text-4xl font-normal tracking-widest`}>
           <Link href="/">Mayur Lodge</Link>
         </div>
 
@@ -36,14 +36,14 @@ export default function Navbar() {
         </div>
 
         {/* Right - SignIn/SignUp Buttons */}
-        <div className="flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-4 text-sm">
           <SignInButton>
-            <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition text-sm border border-gray-300">
+            <button className={`${aderoTrial.className} bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition border border-gray-300`}>
               Sign In
             </button>
           </SignInButton>
           <SignUpButton>
-            <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition text-sm border border-gray-300">
+            <button className={`${aderoTrial.className} bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition border border-gray-300`}>
               Sign Up
             </button>
           </SignUpButton>
