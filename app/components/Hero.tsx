@@ -46,7 +46,7 @@ export default function Hero() {
               </button>
             </div>
           </div>
-
+          
           {/* Right Side Image */}
           <div className="w-1/2 relative h-full">
             <Image
