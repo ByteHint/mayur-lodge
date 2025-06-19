@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import localFont from 'next/font/local';
-import BookNow from './BookNow';
 import Image from 'next/image';
+import { Poppins } from 'next/font/google';
 
 const kugile = localFont({
   src: '../fonts/Kugile_Demo.ttf',
@@ -11,51 +10,54 @@ const kugile = localFont({
   display: 'swap',
 });
 
-const images = ['/Home.jpg', '/Room.jpg', '/MIDC.png'];
+const aderoTrial = localFont({
+  src: '../fonts/AderotrialRegular-ZVreq.otf',
+  variable: '--font-adero-trial',
+  display: 'swap',
+});
+
+const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export default function Hero() {
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Background Slideshow */}
-      {images.map((img, index) => (
-        <Image
-          key={index}
-          src={img}
-          alt={`Slide ${index}`}
-          fill
-          priority={index === 0}
-          className={`absolute object-cover transition-opacity duration-1000 ease-in-out ${
-            index === currentImage ? 'opacity-100' : 'opacity-0'
-          }`}
-        />
-      ))}
+    <div className="relative w-full min-h-screen overflow-hidden bg-[#FFFFFF]">
+      <div className="w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
+        <div className="bg-[#F3F3F3] w-full h-[645px] rounded-3xl flex relative overflow-hidden">
+          
+          {/* Left Side */}
+          <div className="w-1/2 flex flex-col justify-start pl-10 pt-16 gap-6 z-10 bg-[#F3F3F3] -mt-0">
+            <h1 className={`${kugile.className} text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-normal leading-tight text-left text-[#3C3C3C]`}>
+              Experience <br /> Luxury
+            </h1>
+            <p className={`${poppins.className} text-[#3C3C3C] text-[22px] font-normal leading-[100%]`}>
+              Affordable - Accessible - Comfortable.
+            </p>
+            <div className="flex gap-x-4">
+              <button className={`${aderoTrial.className} bg-[#3C3C3C] text-white px-4 py-2 rounded-3xl hover:bg-gray-100 transition border border-[#3C3C3CCC] uppercase`}>
+                reserve now
+              </button>
+              <button className={`${aderoTrial.className} text-black px-4 py-2 rounded-3xl hover:bg-gray-100 transition border border-[#3C3C3CCC] uppercase`}>
+                Rooms
+              </button>
+            </div>
+          </div>
 
-      {/* Overlay Content */}
-      <div className="absolute inset-0 bg-black/60 z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-20 gap-8">
-        {/* Heading on Left */}
-        <div>
-          <h1
-            className={`${kugile.className} text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-bold leading-tight text-left text-white`}
-          >
-            Affordable.<br />
-            Accessible.<br />
-            Comfortable.
-          </h1>
-        </div>
-
-        {/* BookNow centered below */}
-        <div className="max-w-4xl w-full mx-auto">
-          <BookNow />
+          {/* Right Side Image */}
+          <div className="w-1/2 relative h-full">
+            <Image
+              src="/Home.jpg"
+              alt="Background"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div
+              className="absolute left-0 top-0 h-full w-80 z-10"
+              style={{
+                background: 'linear-gradient(270deg, rgba(243, 243, 243, 0) 0%, #F3F3F3 100%)',
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

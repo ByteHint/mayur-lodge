@@ -12,7 +12,7 @@ import FAQPage from './components/FAQpage';
 
 export default function Home() {
   return (
-    <div className="w-full bg-black text-white">
+    <div className="w-full bg-[#FFFFFF] text-white">
       <PromoBanner />
       <Navbar />
      

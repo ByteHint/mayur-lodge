@@ -31,7 +31,7 @@ const features = [
 
 export default function FacilitiesServices() {
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
+    <div id="service"className="relative w-full min-h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
       <Image
