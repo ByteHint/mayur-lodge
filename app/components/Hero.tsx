@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="bg-[#F3F3F3] w-full h-[645px] rounded-3xl flex relative overflow-hidden">
           
           {/* Left Side */}
-          <div className="w-1/2 flex flex-col justify-center pl-10 py-28 gap-6 z-10 bg-[#F3F3F3]">
+          <div className="w-1/2 flex flex-col justify-start pl-10 pt-16 gap-6 z-10 bg-[#F3F3F3] -mt-0">
             <h1 className={`${kugile.className} text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-normal leading-tight text-left text-[#3C3C3C]`}>
               Experience <br /> Luxury
             </h1>
