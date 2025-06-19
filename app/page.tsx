@@ -7,12 +7,15 @@ import AboutUsPage from './sections/About';
 import FacilitiesServices from './sections/Facilities';
 import PromoBanner from './sections/PromoBanner';
 import LocationSection from './sections/Location';
+import FAQPage from './components/FAQpage';
+
 
 export default function Home() {
   return (
     <div className="w-full bg-[#FFFFFF] text-white">
       <PromoBanner />
       <Navbar />
+     
 
       {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
@@ -38,6 +41,10 @@ export default function Home() {
       <div id="location" className="pt-0 mt-0">
         <LocationSection />
       </div>
+      <div id="FAQ" className="pt-0 mt-0">
+        <FAQPage />
+      </div>
+      
     </div>
   );
 }
