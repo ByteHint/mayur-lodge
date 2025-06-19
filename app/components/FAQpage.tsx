@@ -1,5 +1,13 @@
 import React from "react";
 import AccordionItem from "./AccordionItem";
+import localFont from 'next/font/local';
+
+const kugile = localFont({
+  src: '../fonts/Kugile_Demo.ttf',
+  variable: '--font-kugile',
+  display: 'swap',
+});
+
 export default function FAQPage() {
   const faqDataLeft = [
     {
@@ -66,8 +74,8 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-extralight text-gray-800 mb-12 ml-4">
-          FAQ
+        <h1 className={`${kugile.className} text-6xl font-extralight text-[#3C3C3C] mb-12 ml-4`}>
+          FAQs
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
