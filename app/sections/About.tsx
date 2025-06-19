@@ -1,86 +1,41 @@
-import Image from 'next/image';
-import localFont from 'next/font/local';
-
-const aderoTrial = localFont({
-  src: '../fonts/AderotrialRegular-ZVreq.otf',
-  variable: '--font-adero-trial',
-  display: 'swap',
-});
+// components/AboutUsPage.jsx
+import React from 'react';
 
 export default function AboutUsPage() {
   return (
-    <div id="about" className="relative w-full min-h-screen bg-black text-white overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/Home.jpg"
-          alt="Hotel Background"
-          fill
-          sizes="100vw"
-          className="object-cover w-full h-full blur-sm brightness-75 will-change-transform"
-          priority
-        />
+    <section className="min-h-screen bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center justify-center">
+      {/* Main content container */}
+      <div className="max-w-4xl mx-auto text-center text-gray-800 leading-relaxed text-lg sm:text-xl z-10 bg-gray-300 p-8 rounded-lg shadow-md"> {/* Added z-10 to ensure text is above the absolute title */}
+        <p className="mb-8">
+          Welcome to Mayur Lodge, your trusted home away from home, strategically located
+          near MIDC Chakan-Kuruli, one of Maharashtra&apos;s most dynamic and rapidly
+          developing industrial zones. Surrounded by major manufacturing giants such as
+          Mercedes-Benz, Volkswagen, Skoda, and Bajaj, we offer unmatched convenience for
+          professionals and travellers alike.
+        </p>
+        <p className="mb-8">
+          Whether you&apos;re visiting for a business assignment, engineering project, or a relaxing
+          getaway, Mayur Lodge caters to every kind of guest—corporate teams, solo
+          adventurers, families, and couples. Our lodge is designed to deliver a clean, peaceful,
+          and budget-friendly experience without compromising on comfort.
+        </p>
+        <p>
+          At Mayur Lodge, we believe in genuine hospitality, efficient service, and a restful
+          atmosphere—making us a preferred stay option in the Chakan-Kuruli area. Whether
+          it&reposs a short trip or an extended visit, we ensure your stay is smooth, secure, and
+          satisfying.
+        </p>
       </div>
 
-      {/* Foreground Content */}
-      <div className="relative z-10 px-6 md:px-12 lg:px-24 py-32 max-w-screen-xl mx-auto">
-        <h1
-          className={`${aderoTrial.className} text-[40px] sm:text-[60px] md:text-[80px] font-bold uppercase leading-tight mb-16 text-center`}
+      {/* "About Us" heading positioned absolutely at the bottom left */}
+      <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 z-0"> {/* z-0 to put it behind the text */}
+        <h2
+          className="text-6xl sm:text-8xl font-serif text-black opacity-20 whitespace-nowrap select-none"
+          style={{ fontSize: 'clamp(3rem, 10vw, 5rem)' }}
         >
           About Us
-        </h1>
-
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Text Section */}
-          <div className="w-full lg:w-1/2 text-lg leading-relaxed">
-            <p className={`${aderoTrial.className}`}>
-              Welcome to Mayur Lodge, your perfect stay option located near MIDC
-              Chakan–Kuruli, one of Maharashtra&apos;s fastest-growing industrial
-              hubs. Surrounded by renowned companies like Mercedes-Benz,
-              Volkswagen, Skoda, and Bajaj — Mayur Lodge is not only a top
-              choice for business travelers, engineers, and project teams, but
-              also couples, families, and solo travelers seeking a clean,
-              peaceful, and budget-friendly stay.
-            </p>
-          </div>
-
-          {/* Image Section */}
-          <div className="relative w-full lg:w-1/2 h-[450px]">
-            {/* Back Image */}
-            <div className="absolute top-0 left-16 z-0 border-2 border-blue-400 rounded-[15px] overflow-hidden">
-              <Image
-                src="/MIDC.png"
-                alt="Industrial Area"
-                width={500}
-                height={300}
-                className="object-cover"
-              />
-            </div>
-
-            {/* Middle Image */}
-            <div className="absolute top-40 left-5 z-10 border-2 border-blue-300 rounded-[15px] overflow-hidden">
-              <Image
-                src="/temple.png"
-                alt="Local Temple"
-                width={200}
-                height={200}
-                className="object-cover"
-              />
-            </div>
-
-            {/* Front Image */}
-            <div className="absolute top-40 left-60 z-20 border-2 border-blue-200 rounded-[15px] overflow-hidden">
-              <Image
-                src="/Room.jpg"
-                alt="Lodge Room"
-                width={350}
-                height={300}
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
+        </h2>
       </div>
-    </div>
+    </section>
   );
 }

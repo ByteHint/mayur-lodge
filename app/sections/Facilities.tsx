@@ -1,65 +1,58 @@
+// components/FacilitiesServices.jsx
 import React from "react";
-import { UserCog, Bed, Wifi, UtensilsCrossed } from "lucide-react";
-import Image from "next/image";
+// Import icons that closely match the image
+import { FaWifi, FaBoxOpen } from "react-icons/fa"; 
+import { CiForkAndKnife } from "react-icons/ci";// You'll need to ensure react-icons is installed
 
+// Define the features data to match the image content
 const features = [
   {
-    icon: <UserCog size={32} className="text-red-500" />,
-    title: "Personalised Service",
-    description:
-      "We offer special personalised services, along with amenities that are tailored according to your preferences and distinct price value.",
+    icon: <FaWifi size={32} className="text-gray-700" />, // Icon and color matching the image
+    title: "Free & Fast Wi-Fi",
+    description: "Stay seamlessly connected with high-speed internet throughout your stay.",
   },
   {
-    icon: <Bed size={32} className="text-red-500" />,
-    title: "Great Sleep",
-    description:
-      "We promise a relaxing and comfortable sleep on holistic beds made from 100% cotton linen and pocket spring mattress.",
+    icon: <FaBoxOpen size={32} className="text-gray-700" />, // Icon and color matching the image
+    title: "Personalized Room Service",
+    description: "Enjoy attentive in-room service specially tailored to your needs.",
   },
   {
-    icon: <Wifi size={32} className="text-red-500" />,
-    title: "Blazing Fast Wi-Fi",
-    description:
-      "Our highly technologically advanced Wi-Fi facility is active 24/7 to furnish our guests with unbeatable network connectivity.",
-  },
-  {
-    icon: <UtensilsCrossed size={32} className="text-red-500" />,
-    title: "Amazing Breakfast",
-    description:
-      "We strive to offer an array of awesome tantalizing morning brunch or breakfast specially prepared by culinary experts with passion and care.",
+    // Custom icon structure for Breakfast to include the 'D' badge
+    icon: (
+      <div className="relative">
+        < CiForkAndKnife size={32} className="text-gray-700" /> {/* Clock icon */}
+        {/* 'D' badge - positioned absolutely */}
+       
+      </div>
+    ),
+    title: "Breakfast",
+    description: "Start your day with a range of healthy and satisfying breakfast options.",
   },
 ];
 
 export default function FacilitiesServices() {
   return (
-    <div id="service"className="relative w-full min-h-screen overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-      <Image
-        src="/Home.jpg"
-        alt="Hotel Background"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover w-full h-full blur-sm brightness-75"
-      />
-    </div>
-    {/* Centered Card Grid */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-8 md:px-12 py-10 w-full">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="rounded-xl p-6 text-center bg-white/20 backdrop-blur-md border border-white/30 shadow-md hover:shadow-lg transition"
-            >
-              <div className="mb-4 flex justify-center">{feature.icon}</div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-white/90">{feature.description}</p>
-            </div>
-          ))}
-        </div>
+    <section id="service" className="bg-white py-16 px-4 sm:px-6 lg:px-8 min-h-[80vh]">
+      {/* Main Heading */}
+      <h2 className="text-5xl sm:text-6xl font-serif text-gray-800 mb-12 ml-4">
+        Facilities and Services
+      </h2>
+
+      {/* Grid container for cards */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-6">
+        {features.map((feature, index) => (
+          <div
+            key={index}
+            className="rounded-xl p-6 text-left bg-white shadow-md hover:shadow-lg transition relative" // Changed styling
+          >
+            <div className="mb-4 flex justify-start">{feature.icon}</div> {/* Icons aligned left */}
+            <h3 className="text-lg font-semibold text-gray-900 mb-2"> {/* Text color changed */}
+              {feature.title}
+            </h3>
+            <p className="text-sm text-gray-700">{feature.description}</p> {/* Text color changed */}
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
