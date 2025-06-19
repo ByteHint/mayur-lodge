@@ -21,11 +21,11 @@ const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 export default function Hero() {
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-[#FFFFFF]">
-      <div className="max-w-[1366px] w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
+      <div className="w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
         <div className="bg-[#F3F3F3] w-full h-[645px] rounded-3xl flex relative overflow-hidden">
           
           {/* Left Side */}
-          <div className="w-1/2 flex flex-col justify-center pl-10 py-20 gap-4 z-10 bg-[#F3F3F3]">
+          <div className="w-1/2 flex flex-col justify-center pl-10 py-28 gap-6 z-10 bg-[#F3F3F3]">
             <h1 className={`${kugile.className} text-[36px] sm:text-[48px] md:text-[64px] lg:text-[80px] font-normal leading-tight text-left text-[#3C3C3C]`}>
               Experience <br /> Luxury
             </h1>
