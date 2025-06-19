@@ -27,7 +27,7 @@ export default function Navbar() {
         </div>
 
         {/* Center - Navigation Links */}
-        <div className={`hidden md:flex gap-10 text-sm font-medium uppercase ${aderoTrial.className}`}>
+        <div className={`hidden md:flex gap-10 text-sm font-semibold uppercase ${aderoTrial.className}`}>
           <Link href="/#about" className="hover:text-yellow-500 transition">About Us</Link>
           <Link href="/#facilities" className="hover:text-yellow-500 transition">Facilities & Services</Link>
           <Link href="/#gallery" className="hover:text-yellow-500 transition">Gallery</Link>
