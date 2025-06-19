@@ -17,6 +17,14 @@ const aderoTrial = localFont({
 });
 
 export default function Navbar() {
+
+  const scrollToSection = (id: string) => {
+    const scroll = document.getElementById(id);
+    if (scroll) {
+      scroll.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="sticky top-0 z-50 bg-white text-[#3C3C3C] w-full mb-4">
       <div className="w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-16 h-[72px] flex items-center justify-between">
@@ -27,12 +35,23 @@ export default function Navbar() {
         </div>
 
         {/* Nav Links */}
-        <div className={`hidden md:flex gap-10 text-sm font-semibold uppercase ${aderoTrial.className}`}>
-          <Link href="/#about" className="hover:text-yellow-500 transition">About Us</Link>
-          <Link href="/#facilities" className="hover:text-yellow-500 transition">Facilities</Link>
-          <Link href="/#gallery" className="hover:text-yellow-500 transition">Gallery</Link>
-          <Link href="/#location" className="hover:text-yellow-500 transition">Location</Link>
-          <Link href="/#menu" className="hover:text-yellow-500 transition">Menu</Link>
+        <div className={`hidden md:flex gap-10 text-sm font-semibold ${aderoTrial.className}`}>
+          <button onClick={() => scrollToSection('about')} className="hover:text-yellow-500 transition uppercase">
+            About Us
+          </button>
+
+          <button onClick={() => scrollToSection('service')} className="hover:text-yellow-500 transition uppercase">
+            Facilities & services
+          </button>
+          <button onClick={() => scrollToSection('gallery')} className="hover:text-yellow-500 transition uppercase">
+            Gallery
+          </button>
+          <button onClick={() => scrollToSection('location')} className="hover:text-yellow-500 transition uppercase">
+            location
+          </button>
+          <button onClick={() => scrollToSection('menu')} className="hover:text-yellow-500 transition uppercase">
+            menu
+          </button>
         </div>
 
         {/* Icons + Auth */}

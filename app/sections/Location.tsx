@@ -17,7 +17,7 @@ export default function LocationSection() {
   }
 
   return (
-    <section className="bg-black text-white py-16 px-4 sm:px-6 md:px-12 lg:px-24">
+    <section id="location" className="bg-black text-white py-16 px-4 sm:px-6 md:px-12 lg:px-24">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-center uppercase">
         Location
       </h2>
