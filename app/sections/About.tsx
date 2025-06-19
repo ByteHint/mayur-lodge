@@ -11,16 +11,6 @@ export default function AboutUsPage() {
   return (
     <div id="about" className="relative w-full min-h-screen bg-black text-white overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/Home.jpg"
-          alt="Hotel Background"
-          fill
-          sizes="100vw"
-          className="object-cover w-full h-full blur-sm brightness-75 will-change-transform"
-          priority
-        />
-      </div>
 
       {/* Foreground Content */}
       <div className="relative z-10 px-6 md:px-12 lg:px-24 py-32 max-w-screen-xl mx-auto">

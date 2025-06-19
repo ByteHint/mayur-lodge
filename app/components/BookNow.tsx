@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Calendar26 } from "../components/DateAndTime"
+import { Calendar22 } from "./DatePicker"
 
 export default function BookNow() {
   return (
@@ -10,7 +10,7 @@ export default function BookNow() {
         
         <div className="flex flex-col gap-6 w-full">
           {/* Calendar Inputs */}
-          <Calendar26 />
+          <Calendar22 />
 
           {/* Promo + Button */}
           <div className="flex flex-col sm:flex-row items-end gap-4 w-full">
