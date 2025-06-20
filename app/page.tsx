@@ -8,6 +8,7 @@ import FacilitiesServices from './sections/Facilities';
 import PromoBanner from './sections/PromoBanner';
 import LocationSection from './sections/Location';
 import FAQPage from './components/FAQpage';
+import Gallery from './sections/Gallery';
 
 
 export default function Home() {
@@ -32,15 +33,22 @@ export default function Home() {
       </div>
 
       {/* Sections — ensure no top margins that create gaps */}
-      <div id="about" className="pt-0 mt-0">
-        <AboutUsPage />
+      <div id="gallery" className="pt-0 mt-0">
+        <Gallery />
       </div>
-      <div id="facilities" className="pt-0 mt-0">
-        <FacilitiesServices />
-      </div>
+
       <div id="location" className="pt-0 mt-0">
         <LocationSection />
       </div>
+
+      <div id="about" className="pt-0 mt-0">
+        <AboutUsPage />
+      </div>
+
+      <div id="facilities" className="pt-0 mt-0">
+        <FacilitiesServices />
+      </div>
+      
       <div id="FAQ" className="pt-0 mt-0">
         <FAQPage />
       </div>

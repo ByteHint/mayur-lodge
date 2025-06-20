@@ -38,10 +38,10 @@ export default function Hero() {
               Affordable - Accessible - Comfortable.
             </p>
             <div className="flex gap-x-4">
-              <button className={`${aderoTrial.className} bg-[#3C3C3C] text-white px-4 py-2 rounded-3xl hover:bg-[#3C3C3C] transition border border-[#3C3C3CCC] uppercase`}>
+              <button className={`${aderoTrial.className} bg-[#3C3C3C] text-[#FFFFFF] px-4 py-2 rounded-3xl hover:scale-105 transition-all delay-150 duration-300 ease-in-out border border-[#3C3C3CCC] uppercase cursor-pointer`}>
                 reserve now
               </button>
-              <button className={`${aderoTrial.className} text-black px-4 py-2 rounded-3xl hover:bg-[#3C3C3C] transition border border-[#3C3C3CCC] uppercase`}>
+              <button className={`${aderoTrial.className} bg-[#FFFFFF] text-[#3C3C3C] px-4 py-2 rounded-3xl hover:scale-105 transition-all delay-150 duration-300 ease-in-out border border-[#3C3C3CCC] uppercase cursor-pointer`}>
                 Rooms
               </button>
             </div>
@@ -112,7 +112,7 @@ export default function Hero() {
       
       <VerticalSeparator/>
       <button
-          className={`${aderoTrial.className} flex items-center gap-2 px-4 py-2 bg-white text-[#3C3C3C] text-sm font-semibold rounded-2xl border border-[#FFFFFF4D] shadow-md hover:shadow-lg transition`}
+          className={`${aderoTrial.className} flex items-center gap-2 px-4 py-2 bg-white text-[#3C3C3C] hover:scale-105 transition-all delay-150 duration-300 ease-in-outtext-sm font-semibold rounded-2xl border border-[#FFFFFF4D] shadow-md hover:shadow-lg cursor-pointer`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

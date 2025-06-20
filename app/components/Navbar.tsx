@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { SignInButton, SignUpButton } from '@clerk/nextjs';
 import localFont from 'next/font/local';
+import Hamburger from './Hamburger';
 
 const kugile = localFont({
   src: '../fonts/Kugile_Demo.ttf',
@@ -28,7 +29,9 @@ export default function Navbar() {
   return (
     <div className="sticky top-0 z-50 bg-white text-[#3C3C3C] w-full mb-4">
       <div className="w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-16 h-[72px] flex items-center justify-between">
-        
+
+        <Hamburger />
+
         {/* Logo */}
         <div className={`${kugile.className} text-4xl font-normal tracking-widest`}>
           <Link href="/">Mayur Lodge</Link>
