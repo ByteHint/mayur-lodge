@@ -9,8 +9,7 @@ const aderoTrial = localFont({
 
 export default function AboutUsPage() {
   return (
-    <div id="about" className="relative w-full min-h-screen bg-black text-white overflow-hidden">
-      {/* Background Image */}
+    <div id="about" className="relative w-full min-h-screen bg-[#FFFFFF] text-[#3C3C3C] overflow-hidden">
 
       {/* Foreground Content */}
       <div className="relative z-10 px-6 md:px-12 lg:px-24 py-32 max-w-screen-xl mx-auto">
