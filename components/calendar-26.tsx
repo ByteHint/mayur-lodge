@@ -24,7 +24,7 @@ export default function Calendar26() {
   )
 
   return (
-    <div className="flex w-full max-w-64 min-w-0 flex-col gap-6">
+    <div className="flex flex-wrap w-full sm:w-auto max-w-64 min-w-0 flex-col gap-6">
       <div className="flex gap-4">
         <div className="flex flex-1 flex-col gap-3">
           <Label htmlFor="date-from" className="px-1">

@@ -25,7 +25,7 @@ export default function LocationSection() {
   }
 
   return (
-    <section id="location" className={`${kugile.className} bg-[#F3F3F3] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24`}>
+    <section id="location" className={`${kugile.className} bg-[#FFFFFF] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24`}>
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-start">
         Our Location
       </h2>

@@ -65,11 +65,11 @@ export default function Hero() {
           </div>
         </div>
 
-    <div className="absolute left-1/2 transform -translate-x-1/2 bottom-8 w-[90%] max-w-[1300px] h-[138px] 
-      border border-white/40 rounded-[20px] 
-      backdrop-blur-[10px] bg-[#0000000D]/70 
-      flex justify-between items-center px-6 py-3 z-30 -ml-4
-      shadow-[0px_4px_11.6px_0px_#00000026]">
+    <div className="absolute left-1/2 transform -translate-x-1/2 bottom-4 w-[95%] max-w-[1300px] h-auto 
+  border border-white/40 rounded-2xl 
+  backdrop-blur-[10px] bg-[#0000000D]/70 
+  flex flex-col sm:flex-row justify-between items-center px-4 py-4 gap-4 z-30 shadow-[0px_4px_11.6px_0px_#00000026]">
+
         
       <div className={`${aderoTrial.className} w-[222px] h-[28px] whitespace-nowrap uppercase text-[#3C3C3C] pl-[120px] text-[20px] font-bold tracking-widest flex justify-center items-center`}>
         Mayur Lodge

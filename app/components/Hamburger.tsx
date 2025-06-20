@@ -1,51 +1,59 @@
+'use client';
+
 import { useState } from 'react';
 
 const scrollToSection = (id: string) => {
-    const scroll = document.getElementById(id);
-    if (scroll) {
-      scroll.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  
+  const scroll = document.getElementById(id);
+  if (scroll) {
+    scroll.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 export default function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <div className="md:hidden">
-      <button onClick={toggleMenu} className="cursor-pointer hover:blue-600 ">
-        <svg
-          className="w-6 h-6 text-gray-700"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+    <>
+      {/* Hamburger Icon */}
+      <div className="md:hidden z-[60]">
+        <button onClick={toggleMenu} className="cursor-pointer hover:text-yellow-500 transition">
+          <svg
+            className="w-6 h-6 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
 
+      {/* Overlay */}
       {isOpen && (
-        <div className="cursor-pointer absolute right-0 mt-2 w-48 bg-white shadow-lg rounded z-10 p-2 text-sm">
-          <button onClick={() => scrollToSection('about')} className="hover:text-yellow-500 transition uppercase">
-            About Us
-          </button>
-
-          <button onClick={() => scrollToSection('service')} className="hover:text-yellow-500 transition uppercase">
-            Facilities & services
-          </button>
-          <button onClick={() => scrollToSection('gallery')} className="hover:text-yellow-500 transition uppercase">
-            Gallery
-          </button>
-          <button onClick={() => scrollToSection('location')} className="hover:text-yellow-500 transition uppercase">
-            location
-          </button>
-          <button onClick={() => scrollToSection('menu')} className="hover:text-yellow-500 transition uppercase">
-            menu
-          </button>
-        </div>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-40 z-40"
+          onClick={closeMenu}
+        />
       )}
-    </div>
+
+      {/* Side Drawer Menu */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col items-start p-6 gap-6 mt-16 text-[#3C3C3C] uppercase font-semibold">
+          <button onClick={() => { scrollToSection('about'); closeMenu(); }} className="hover:text-yellow-500">About Us</button>
+          <button onClick={() => { scrollToSection('service'); closeMenu(); }} className="hover:text-yellow-500">Facilities & Services</button>
+          <button onClick={() => { scrollToSection('gallery'); closeMenu(); }} className="hover:text-yellow-500">Gallery</button>
+          <button onClick={() => { scrollToSection('location'); closeMenu(); }} className="hover:text-yellow-500">Location</button>
+          <button onClick={() => { scrollToSection('menu'); closeMenu(); }} className="hover:text-yellow-500">Menu</button>
+        </div>
+      </div>
+    </>
   );
 }
