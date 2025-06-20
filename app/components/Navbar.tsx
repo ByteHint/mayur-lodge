@@ -39,20 +39,20 @@ export default function Navbar() {
 
         {/* Nav Links */}
         <div className={`hidden md:flex gap-10 text-sm font-semibold ${aderoTrial.className}`}>
-          <button onClick={() => scrollToSection('about')} className="hover:text-yellow-500 transition uppercase">
+          <button onClick={() => scrollToSection('about')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             About Us
           </button>
 
-          <button onClick={() => scrollToSection('service')} className="hover:text-yellow-500 transition uppercase">
+          <button onClick={() => scrollToSection('service')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             Facilities & services
           </button>
-          <button onClick={() => scrollToSection('gallery')} className="hover:text-yellow-500 transition uppercase">
+          <button onClick={() => scrollToSection('gallery')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             Gallery
           </button>
-          <button onClick={() => scrollToSection('location')} className="hover:text-yellow-500 transition uppercase">
+          <button onClick={() => scrollToSection('location')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             location
           </button>
-          <button onClick={() => scrollToSection('menu')} className="hover:text-yellow-500 transition uppercase">
+          <button onClick={() => scrollToSection('menu')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             menu
           </button>
         </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
         {/* Icons + Auth */}
         <div className="flex items-center gap-3">
             {/* User Icon */}
-            <div className="border border-gray-400 rounded-full p-2">
+            <div className="border border-gray-400 rounded-full p-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -78,7 +78,7 @@ export default function Navbar() {
             </div>
 
             {/* Phone Icon */}
-            <div className="border border-gray-400 rounded-full p-2">
+            <div className="border border-gray-400 rounded-full p-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -96,7 +96,7 @@ export default function Navbar() {
             </div>
 
             {/* Book Icon */}
-            <div className="border border-gray-400 rounded-full p-2">
+            <div className="border border-gray-400 rounded-full p-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -117,12 +117,12 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <SignInButton>
-            <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition text-sm border border-gray-300">
+            <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
               Sign In
             </button>
           </SignInButton>
           <SignUpButton>
-              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 transition text-sm border border-gray-300">
+              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
                 Sign Up
               </button>
             </SignUpButton>
