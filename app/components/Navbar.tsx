@@ -28,12 +28,12 @@ export default function Navbar() {
 
   return (
     <div className="sticky top-0 z-50 bg-white text-[#3C3C3C] w-full mb-4">
-      <div className="w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-16 h-[72px] flex items-center justify-between">
+      <div className="flex items-center justify-between w-full mx-auto px-4 py-2 sm:px-6 md:px-10 lg:px-16 h-[72px]">
 
         <Hamburger />
 
         {/* Logo */}
-        <div className={`${kugile.className} text-4xl font-normal tracking-widest`}>
+        <div className={`${kugile.className} text-3xl sm:text-4xl font-normal tracking-widest text-center sm:text-start whitespace-nowrap`}>
           <Link href="/">Mayur Lodge</Link>
         </div>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
         </div>
 
         {/* Icons + Auth */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 h-[22px] md:h-[48px]">
             {/* User Icon */}
             <div className="border border-gray-400 rounded-full p-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
               <svg
@@ -115,7 +115,7 @@ export default function Navbar() {
           </div>
 
 
-        <div className="flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <SignInButton>
             <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
               Sign In
