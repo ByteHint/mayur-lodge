@@ -37,7 +37,7 @@ const features = [
 
 export default function FacilitiesServices() {
   return (
-    <section id="location" className="bg-[#FFFFFF] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24">
+    <section id="facilities" className="bg-[#FFFFFF] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24">
       <h2 className={`${kugile.className} text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-start tracking-wider`}>
         Facilities and Services
       </h2>

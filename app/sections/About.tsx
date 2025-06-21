@@ -22,7 +22,7 @@ export default function AboutUsPage() {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Text Section */}
           <div className="w-full lg:w-1/2 text-lg leading-relaxed">
-            <p className={`${aderoTrial.className}`}>
+            <p className={`${aderoTrial.className} bg-[#F3F3F3]`}>
               Welcome to Mayur Lodge, your perfect stay option located near MIDC
               Chakan–Kuruli, one of Maharashtra&apos;s fastest-growing industrial
               hubs. Surrounded by renowned companies like Mercedes-Benz,
