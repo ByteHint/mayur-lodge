@@ -40,7 +40,7 @@ export default function Footer() {
 
         {/* Center: Heading + Text + Button */}
         <div className="flex-grow flex flex-col items-center text-center mt-0 mb-30 pr-0 md:pr-60">
-          <h2 className={`${kugile.className} text-[28px] font-bold -mt-70 tracking-wide md:text-5xl md:font-normal md:mt-4 md:mb-2 whitespace-nowrap`}>
+          <h2 className={`${kugile.className} text-[22px] font-bold -mt-70 tracking-wide md:text-5xl md:font-normal md:mt-4 md:mb-2 whitespace-nowrap`}>
             Request More Information
           </h2>
 

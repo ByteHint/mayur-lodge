@@ -40,7 +40,7 @@ const features = [
 export default function FacilitiesServices() {
   return (
     <section id="facilities" className="bg-[#FFFFFF] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24">
-      <h2 className={`${kugile.className} text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-start tracking-wider`}>
+      <h2 className={`${kugile.className} text-3xl sm:text-4xl md:text-5xl font-bold md:mb-10 mb-2 text-start tracking-wider`}>
         Facilities and Services
       </h2>
     {/* Centered Card Grid */}
@@ -49,7 +49,7 @@ export default function FacilitiesServices() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="rounded-xl p-6 text-center bg-[#F3F3F3] backdrop-blur-md border border-white/30 shadow-md hover:shadow-lg transition hover:scale-105 duration-300 ease-ou"
+              className="rounded-xl p-6 text-center bg-[#F3F3F3] backdrop-blur-md border border-white/30 shadow-md hover:shadow-lg transition hover:scale-105 duration-300 ease-out"
             >
               <div className="mb-4 flex justify-center">{feature.icon}</div>
               <h3 className="text-lg font-semibold text-[#3C3C3C] mb-2">

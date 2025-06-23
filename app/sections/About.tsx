@@ -24,7 +24,7 @@ export default function AboutUsPage() {
       </div>
 
       {/* Main content container */}
-      <div className="max-w-4xl text-[#3C3C3C] mx-auto text-center leading-relaxed text-base sm:text-lg md:text-xl z-10 bg-[#F3F3F3] p-6 sm:p-8 rounded-2xl shadow-md"> {/* Adjusted text and padding for responsiveness */}
+      <div className="max-w-4xl text-[#3C3C3C] mx-auto text-center leading-relaxed text-base sm:text-lg md:text-xl z-10 bg-[#F3F3F3] p-6 sm:p-8 rounded-2xl shadow-md transition hover:scale-105 duration-300 ease-out"> {/* Adjusted text and padding for responsiveness */}
         <p className="mb-8">
           Welcome to Mayur Lodge, your trusted home away from home, strategically located
           near MIDC Chakan-Kuruli, one of Maharashtra&apos;s most dynamic and rapidly
