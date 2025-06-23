@@ -1,8 +1,8 @@
 // components/FacilitiesServices.jsx
 import React from "react";
 // Import icons that closely match the image
-import { FaWifi, FaBoxOpen } from "react-icons/fa"; 
-import { CiForkAndKnife } from "react-icons/ci";// You'll need to ensure react-icons is installed
+import { FaWifi, FaBoxOpen } from "react-icons/fa";
+import { CiForkAndKnife } from "react-icons/ci"; // You'll need to ensure react-icons is installed
 
 // Define the features data to match the image content
 const features = [
@@ -20,9 +20,9 @@ const features = [
     // Custom icon structure for Breakfast to include the 'D' badge
     icon: (
       <div className="relative">
-        < CiForkAndKnife size={32} className="text-gray-700" /> {/* Clock icon */}
+        <CiForkAndKnife size={32} className="text-gray-700" /> {/* Clock icon */}
         {/* 'D' badge - positioned absolutely */}
-       
+
       </div>
     ),
     title: "Breakfast",
@@ -34,12 +34,12 @@ export default function FacilitiesServices() {
   return (
     <section id="service" className="bg-white py-16 px-4 sm:px-6 lg:px-8 min-h-[80vh]">
       {/* Main Heading */}
-      <h2 className="text-5xl sm:text-6xl font-serif text-gray-800 mb-12 ml-4">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-gray-800 mb-8 sm:mb-12 ml-4 sm:ml-0 text-center sm:text-left"> {/* Adjusted font size, margin, and alignment for responsiveness */}
         Facilities and Services
       </h2>
 
       {/* Grid container for cards */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2 sm:px-4 py-6"> {/* Adjusted padding for smaller screens */}
         {features.map((feature, index) => (
           <div
             key={index}
