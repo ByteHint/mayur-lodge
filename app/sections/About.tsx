@@ -1,75 +1,51 @@
-import Image from 'next/image';
-import localFont from 'next/font/local';
+// components/AboutUsPage.jsx
+import React from 'react';
+import localFont from "next/font/local";
 
-const aderoTrial = localFont({
-  src: '../fonts/AderotrialRegular-ZVreq.otf',
-  variable: '--font-adero-trial',
+const kugile = localFont({
+  src: '../fonts/Kugile_Demo.ttf',
+  variable: '--font-kugile',
   display: 'swap',
 });
 
+
 export default function AboutUsPage() {
   return (
-    <div id="about" className="relative w-full min-h-screen bg-[#FFFFFF] text-[#3C3C3C] overflow-hidden">
+    <section className="min-h-screen bg-[#FFFFFF] py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden flex items-center justify-center">
 
-      {/* Foreground Content */}
-      <div className="relative z-10 px-6 md:px-12 lg:px-24 py-32 max-w-screen-xl mx-auto">
-        <h1
-          className={`${aderoTrial.className} text-[40px] sm:text-[60px] md:text-[80px] font-bold uppercase leading-tight mb-16 text-center`}
+      {/* "About Us" heading positioned absolutely at the top left */}
+      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 md:top-8 md:left-8 z-0">
+        <h2
+          className={`${kugile.className} text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-[#3c3c3c]  whitespace-nowrap select-none` }
+          style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}
         >
           About Us
-        </h1>
-
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Text Section */}
-          <div className="w-full lg:w-1/2 text-lg leading-relaxed">
-            <p className={`${aderoTrial.className} bg-[#F3F3F3]`}>
-              Welcome to Mayur Lodge, your perfect stay option located near MIDC
-              Chakan–Kuruli, one of Maharashtra&apos;s fastest-growing industrial
-              hubs. Surrounded by renowned companies like Mercedes-Benz,
-              Volkswagen, Skoda, and Bajaj — Mayur Lodge is not only a top
-              choice for business travelers, engineers, and project teams, but
-              also couples, families, and solo travelers seeking a clean,
-              peaceful, and budget-friendly stay.
-            </p>
-          </div>
-
-          {/* Image Section */}
-          <div className="relative w-full lg:w-1/2 h-[450px]">
-            {/* Back Image */}
-            <div className="absolute top-0 left-16 z-0 border-2 border-blue-400 rounded-[15px] overflow-hidden">
-              <Image
-                src="/MIDC.png"
-                alt="Industrial Area"
-                width={500}
-                height={300}
-                className="object-cover"
-              />
-            </div>
-
-            {/* Middle Image */}
-            <div className="absolute top-40 left-5 z-10 border-2 border-blue-300 rounded-[15px] overflow-hidden">
-              <Image
-                src="/temple.png"
-                alt="Local Temple"
-                width={200}
-                height={200}
-                className="object-cover"
-              />
-            </div>
-
-            {/* Front Image */}
-            <div className="absolute top-40 left-60 z-20 border-2 border-blue-200 rounded-[15px] overflow-hidden">
-              <Image
-                src="/Room.jpg"
-                alt="Lodge Room"
-                width={350}
-                height={300}
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
+        </h2>
       </div>
-    </div>
+
+      {/* Main content container */}
+      <div className="max-w-4xl text-[#3C3C3C] mx-auto text-center leading-relaxed text-base sm:text-lg md:text-xl z-10 bg-[#F3F3F3] p-6 sm:p-8 rounded-2xl shadow-md"> {/* Adjusted text and padding for responsiveness */}
+        <p className="mb-8">
+          Welcome to Mayur Lodge, your trusted home away from home, strategically located
+          near MIDC Chakan-Kuruli, one of Maharashtra&apos;s most dynamic and rapidly
+          developing industrial zones. Surrounded by major manufacturing giants such as
+          Mercedes-Benz, Volkswagen, Skoda, and Bajaj, we offer unmatched convenience for
+          professionals and travellers alike.
+        </p>
+        <p className="mb-8">
+          Whether you&apos;re visiting for a business assignment, engineering project, or a relaxing
+          getaway, Mayur Lodge caters to every kind of guest—corporate teams, solo
+          adventurers, families, and couples. Our lodge is designed to deliver a clean, peaceful,
+          and budget-friendly experience without compromising on comfort.
+        </p>
+        <p>
+          At Mayur Lodge, we believe in genuine hospitality, efficient service, and a restful
+          atmosphere—making us a preferred stay option in the Chakan-Kuruli area. Whether
+          it&apos;s a short trip or an extended visit, we ensure your stay is smooth, secure, and
+          satisfying.
+        </p>
+      </div>
+
+    </section>
   );
 }

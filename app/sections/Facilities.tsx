@@ -1,5 +1,7 @@
 import React from "react";
-import { UserCog, Bed, Wifi, UtensilsCrossed } from "lucide-react";
+import {  Bed, Wifi, UtensilsCrossed } from "lucide-react";
+import { FaBoxOpen } from "react-icons/fa";
+
 import localFont from "next/font/local";
 
 const kugile = localFont({
@@ -10,7 +12,7 @@ const kugile = localFont({
 
 const features = [
   {
-    icon: <UserCog size={32} className="text-[#292929]" />,
+    icon: <FaBoxOpen  size={32} className="text-[#292929]" />,
     title: "Personalised Service",
     description:
       "We offer special personalised services, along with amenities that are tailored according to your preferences and distinct price value.",
