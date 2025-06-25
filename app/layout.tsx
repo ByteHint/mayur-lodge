@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pratik Lodge",
-  description: "A cozy place to relax and unwind",
+  title: "A cozy place to relax and unwind",
+  description: "Mayur Lodge",
 };
 
 export default function RootLayout({
