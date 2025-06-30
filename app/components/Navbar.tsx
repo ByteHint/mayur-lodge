@@ -1,7 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { SignInButton, SignUpButton } from '@clerk/nextjs';
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/nextjs";
+
 import localFont from 'next/font/local';
 import Hamburger from './Hamburger';
 
@@ -34,7 +41,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <div className={`${kugile.className} text-2xl sm:text-4xl mt-2 md:mt-0 font-normal tracking-wider text-center sm:text-start pr-30 whitespace-nowrap`}>
-          <Link href="/">Mayur Lodge</Link>
+          <Link href="/">Pratik Lodge</Link>
         </div>
 
         {/* Nav Links */}
@@ -46,91 +53,66 @@ export default function Navbar() {
           <button onClick={() => scrollToSection('facilities')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             Facilities & services
           </button>
+
           <button onClick={() => scrollToSection('gallery')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             Gallery
           </button>
+
           <button onClick={() => scrollToSection('location')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             location
           </button>
+          
           <button onClick={() => scrollToSection('menu')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             menu
           </button>
         </div>
 
+
+        <button className={`${aderoTrial.className} bg-[#F3F3F3] text-[#3C3C3C] text-sm border border-[#3C3C3C] px-2 py-2 rounded-3xl hover:scale-105 transition`}>
+          Reach Out
+        </button>
+
         {/* Icons + Auth */}
         <div className="absolute right-[8px] top-[1px] h-[30px] mt-5 md:mt-0 flex items-center gap-[8px] md:gap-[10px] md:static md:h-[48px]">
-
-
-  {/* Phone Icon */}
-  <div className="border border-gray-400 rounded-full p-[6px] hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className="w-[16px] h-[16px] text-black"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-      />
-    </svg>
-  </div>
-
-  {/* Book Icon */}
-  <div className="border border-gray-400 rounded-full p-[6px] hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className="w-[16px] h-[16px] text-black"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
-      />
-    </svg>
-  </div>  
   
-  {/* User Icon */}
-  <div className="border border-gray-400 rounded-full p-[6px] hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className="w-[16px] h-[16px] text-black"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
-      />
-    </svg>
-  </div>
-</div>
-
-
-
-        <div className="hidden md:flex items-center gap-2">
-          <SignInButton>
-            <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
-              Sign In
-            </button>
-          </SignInButton>
-          <SignUpButton>
-              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
-                Sign Up
-              </button>
-            </SignUpButton>
+          {/* User Icon */}
+          <div className="border border-gray-400 rounded-full p-[6px] hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-[16px] h-[16px] text-black"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+              />
+            </svg>
           </div>
         </div>
+
+    <div className="hidden md:flex items-center gap-2">
+      <SignedOut>
+        <SignInButton>
+          <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
+            Sign In
+          </button>
+        </SignInButton>
+        <SignUpButton>
+          <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
+            Sign Up
+          </button>
+        </SignUpButton>
+      </SignedOut>
+
+      <SignedIn>
+        <UserButton afterSignOutUrl="/" />
+      </SignedIn>
+    </div>
       </div>
+    </div>
   );
 }

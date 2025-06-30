@@ -61,10 +61,10 @@ export default function Footer() {
 
         {/* Right: Social Icons */}
         <div className="flex gap-4 -mt-8 md:flex-shrink-0 md:mt-60">
-          <a href="#">
+          <a href="https://wa.me/14155238886">
             <FaWhatsapp className="text-2xl hover:text-green-500" />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com">
             <FaInstagram className="text-2xl hover:text-pink-600" />
           </a>
           <a href="#">

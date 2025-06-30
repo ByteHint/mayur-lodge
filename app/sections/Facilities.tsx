@@ -1,5 +1,5 @@
 import React from "react";
-import {  Bed, Wifi, UtensilsCrossed } from "lucide-react";
+import {  Wifi, UtensilsCrossed } from "lucide-react";
 import { FaBoxOpen } from "react-icons/fa";
 
 import localFont from "next/font/local";
@@ -17,17 +17,12 @@ const features = [
     description:
       "We offer special personalised services, along with amenities that are tailored according to your preferences and distinct price value.",
   },
-  {
-    icon: <Bed size={32} className="text-[#292929]" />,
-    title: "Great Sleep",
-    description:
-      "We promise a relaxing and comfortable sleep on holistic beds made from 100% cotton linen and pocket spring mattress.",
-  },
+
   {
     icon: <Wifi size={32} className="text-[#292929]" />,
-    title: "Blazing Fast Wi-Fi",
+    title: "Free & Fast Wi-Fi",
     description:
-      "Our highly technologically advanced Wi-Fi facility is active 24/7 to furnish our guests with unbeatable network connectivity.",
+      "Stay seamlessly connected with high-speed internet throughout your stay.",
   },
   {
     icon: <UtensilsCrossed size={32} className="text-[#292929]" />,
@@ -40,7 +35,7 @@ const features = [
 export default function FacilitiesServices() {
   return (
     <section id="facilities" className="bg-[#FFFFFF] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24">
-      <h2 className={`${kugile.className} text-3xl sm:text-4xl md:text-5xl font-bold md:mb-10 mb-2 text-start tracking-wider`}>
+      <h2 className={`${kugile.className} text-[67px] sm:text-4xl md:text-5xl md:mb-10 mb-2 text-start tracking-wider`}>
         Facilities and Services
       </h2>
     {/* Centered Card Grid */}
