@@ -18,7 +18,7 @@ export default function Hamburger() {
   return (
     <>
       {/* Hamburger Icon */}
-      <div className="md:hidden z-[60]">
+      <div className="md:hidden z-[60] w-[22px] h-[22px]">
         <button onClick={toggleMenu} className="cursor-pointer hover:text-yellow-500 transition">
           <svg
             className="w-6 h-6 text-gray-700"

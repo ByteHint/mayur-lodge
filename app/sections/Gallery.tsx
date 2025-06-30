@@ -30,8 +30,8 @@ const slides = [
 
 export default function Gallery() {
   return (
-    <section id="location" className={`${kugile.className} bg-[#FFFFFF] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24`}>
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10 text-start">
+    <section id="gallery" className={`${kugile.className} bg-[#FFFFFF] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24 overflow-x-clip`}>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl mb-10 text-start">
         Room Showcase
       </h2>
         <Carousel slides={slides} />

@@ -9,6 +9,7 @@ import PromoBanner from './sections/PromoBanner';
 import LocationSection from './sections/Location';
 import FAQPage from './components/FAQpage';
 import Gallery from './sections/Gallery';
+import UserReview from './sections/Review';
 
 
 export default function Home() {
@@ -47,6 +48,10 @@ export default function Home() {
 
       <div id="facilities" className="pt-0 mt-0">
         <FacilitiesServices />
+      </div>
+
+      <div id="review" className="pt-0 mt-0">
+        <UserReview />
       </div>
       
       <div id="FAQ" className="pt-0 mt-0">

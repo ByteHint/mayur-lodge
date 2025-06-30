@@ -74,7 +74,7 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-[#FFFFFF] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className={`${kugile.className} text-6xl font-extralight text-[#3C3C3C] mb-12 ml-4`}>
+        <h1 className={`${kugile.className} text-6xl text-[#3C3C3C] mb-12 ml-4`}>
           FAQs
         </h1>
 
