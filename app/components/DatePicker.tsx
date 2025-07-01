@@ -24,7 +24,7 @@ export function Calendar22() {
 
   return (
     <div className="flex flex-col gap-3 text-[#3C3C3C]">
-      <Label htmlFor="date" className={`${montserrat.className} px-1 text-[20px] font-semibold`}>
+      <Label htmlFor="date" className={`${montserrat.className} px-1 text-[30px]`}>
         Check In
       </Label>
       <Popover open={open} onOpenChange={setOpen}>
@@ -38,7 +38,7 @@ export function Calendar22() {
             <ChevronDownIcon />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto overflow-hidden p-0" align="start">
+        <PopoverContent className="w-auto bg-[#F3F3F3] overflow-hidden p-0" align="start">
           <Calendar
             mode="single"
             selected={date}
@@ -60,7 +60,7 @@ export function Calendar23() {
 
   return (
     <div className="flex flex-col gap-3 text-[#3C3C3C]">
-      <Label htmlFor="date" className={`${montserrat.className} px-1 text-[20px] font-semibold`}>
+      <Label htmlFor="date" className={`${montserrat.className} px-1 text-[30px]`}>
         Check Out
       </Label>
       <Popover open={open} onOpenChange={setOpen}>
@@ -74,7 +74,7 @@ export function Calendar23() {
             <ChevronDownIcon />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto overflow-hidden p-0" align="start">
+        <PopoverContent className="w-auto bg-[#F3F3F3] overflow-hidden p-0" align="start">
           <Calendar
             mode="single"
             selected={date}

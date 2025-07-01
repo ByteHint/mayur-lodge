@@ -99,35 +99,25 @@ export default function Hero() {
               <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-[#3C3C3C]">
                 <div className="flex items-center gap-8 text-[#3C3C3C]">
                       <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
+                          width="25" 
+                          height="29" 
+                          viewBox="0 0 25 29" 
                           fill="none" 
-                          viewBox="0 0 24 24" 
-                          strokeWidth="1.5" 
-                          stroke="currentColor" 
-                          className="size-6 mt-9">
-
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="relative -top-[24px] left-[24px]">
+                        <path d="M6.5 9.11841H18.4062M5.6875 1.97559V4.11869M19.0625 1.97559V4.11843M23 7.11843L23 23.9756C23 25.6324 21.6569 26.9756 20 26.9756H5C3.34315 26.9756 2 25.6324 2 23.9756V7.11843C2 5.46158 3.34315 4.11843 5 4.11843H20C21.6569 4.11843 23 5.46157 23 7.11843Z" 
+                              stroke="#3C3C3C" 
+                              stroke-width="3" 
+                              stroke-linecap="round" 
+                              stroke-linejoin="round"/>
                       </svg>
 
                       <Calendar22 />      
                 </div>
 
                 <div className="flex items-center gap-8 text-[#3C3C3C]">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        strokeWidth="1.5" 
-                        stroke="currentColor" 
-                        className="size-6 mt-9">
-
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                      <svg className="relative -top-[24px] left-[24px]" width="25" height="29" viewBox="0 0 25 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.5 9.11841H18.4062M5.6875 1.97559V4.11869M19.0625 1.97559V4.11843M23 7.11843L23 23.9756C23 25.6324 21.6569 26.9756 20 26.9756H5C3.34315 26.9756 2 25.6324 2 23.9756V7.11843C2 5.46158 3.34315 4.11843 5 4.11843H20C21.6569 4.11843 23 5.46157 23 7.11843Z" stroke="#3C3C3C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
                       <Calendar23/>
                 </div>
