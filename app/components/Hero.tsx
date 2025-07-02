@@ -2,10 +2,10 @@
 
 import localFont from 'next/font/local';
 import Image from 'next/image';
-import { Poppins } from 'next/font/google';
 import VerticalSeparator from './VerticalSeparator';
 import { Calendar22 } from './DatePicker';
 import { Calendar23 } from './DatePicker';
+import { FlipWordsDemo } from './FlipWords';
 
 
 const kugile = localFont({
@@ -20,8 +20,6 @@ const aderoTrial = localFont({
   display: 'swap',
 });
 
-const poppins = Poppins({ weight: '400', subsets: ['latin'] });
-
 export default function Hero() {
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-[#FFFFFF]">
@@ -34,9 +32,9 @@ export default function Hero() {
               <h1 className={`${kugile.className} text-[48px] md:text-[64px] lg:text-[80px] font-normal leading-tight text-[#3C3C3C]`}>
                 Experience <br /> Luxury
               </h1>
-              <p className={`${poppins.className} text-[#3C3C3C] text-[20px] md:text-[22px] font-normal`}>
-                Affordable – Accessible – Comfortable.
-              </p>
+
+              <FlipWordsDemo />
+
               <div className="hidden md:flex gap-4">
                 <button className={`${aderoTrial.className} bg-[#3C3C3C] text-[#F3F3F3] px-4 py-2 rounded-3xl hover:scale-105 transition`}>
                   Reserve Now
@@ -52,9 +50,7 @@ export default function Hero() {
               <h1 className={`${kugile.className} text-[48px] font-normal leading-tight text-[#3C3C3C] drop-shadow-md`}>
                 Experience <br /> Luxury
               </h1>
-              <p className={`${poppins.className} text-[#3C3C3C] text-[16px] font-normal mt-2 drop-shadow-md`}>
-                Affordable – Accessible – Comfortable.
-              </p>
+              <FlipWordsDemo />
               <div className="mt-4 flex justify-center gap-4">
               </div>
             </div>
