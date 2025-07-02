@@ -107,9 +107,9 @@ export default function Hero() {
                           className="relative -top-[24px] left-[24px]">
                         <path d="M6.5 9.11841H18.4062M5.6875 1.97559V4.11869M19.0625 1.97559V4.11843M23 7.11843L23 23.9756C23 25.6324 21.6569 26.9756 20 26.9756H5C3.34315 26.9756 2 25.6324 2 23.9756V7.11843C2 5.46158 3.34315 4.11843 5 4.11843H20C21.6569 4.11843 23 5.46157 23 7.11843Z" 
                               stroke="#3C3C3C" 
-                              stroke-width="3" 
-                              stroke-linecap="round" 
-                              stroke-linejoin="round"/>
+                              strokeWidth="3" 
+                              strokeLinecap="round" 
+                              strokeLinejoin="round"/>
                       </svg>
 
                       <Calendar22 />      

@@ -60,7 +60,7 @@ export default function FacilitiesServices() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="rounded-xl p-6 text-start bg-gray-300 shadow-sm transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg cursor-pointer"
+              className="rounded-xl p-6 text-start bg-[#F3F3F3] shadow-sm transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg cursor-pointer"
             >
               <div className="mb-4 flex justify-start">{feature.icon}</div>
 
