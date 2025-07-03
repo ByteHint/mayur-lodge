@@ -10,6 +10,7 @@ import LocationSection from './sections/Location';
 import FAQPage from './components/FAQpage';
 import Gallery from './sections/Gallery';
 import UserReview from './sections/Review';
+import { Footer } from 'react-day-picker';
 
 
 export default function Home() {
@@ -58,6 +59,7 @@ export default function Home() {
         <FAQPage />
       </div>
       
+      <Footer/>
     </div>
   );
 }
