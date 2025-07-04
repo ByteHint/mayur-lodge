@@ -9,6 +9,8 @@ import { Poppins as PoppinsFont } from 'next/font/google';
 import PhoneInputForm from '../components/PhoneInput';
 import InputBox from '../components/InputBox';
 import Link from 'next/link';
+import LogoutButton from '../components/LogOut';
+
 
 const poppins = PoppinsFont({
   weight: ['400'],
@@ -68,17 +70,14 @@ export default function ProfilePage() {
                 </defs>
                 </svg>
             </span> Settings</div>
-          <div className={`${poppins.className} text-[#808080] flex items-center gap-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer`}>
-            <span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="#808080"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-logout"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" />
-            </svg>
-            </span> Logout</div>
+
+            <LogoutButton />
         </div>
 
         {/* Profile Info */}
         <div className="flex items-center gap-6 mb-6">
           <Image
-            src={user?.imageUrl || '/placeholder.jpg'}
+            src={user?.imageUrl || '/placeholder.webp'}
             width={127.96393585205078}
             height={127.96393585205078}
             alt="User"
@@ -90,7 +89,7 @@ export default function ProfilePage() {
           />
           <div>
             <p className= {`${poppins.className} text-[28px] text-[#3C3C3C]`}> {user?.fullName}</p>
-            <p className="text-[22px] text-[#808080]">Maharashtra, India</p>
+            <p className="text-[22px] text-[#808080]">{location}</p>
           </div>
         </div>
 
