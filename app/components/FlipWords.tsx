@@ -8,10 +8,10 @@ export function FlipWordsDemo() {
   const words = ["Accessible", "Beautiful", "Modern"];
 
   return (
-      <p className={`${poppins.className} text-[#3C3C3C] text-[20px] md:text-[22px] font-normal`}>
+      <div className={`${poppins.className} text-[#3C3C3C] text-[20px] md:text-[22px] font-normal`}>
         Affordable -  
         <FlipWords words={words} />
         - Comfortable.
-      </p>
+      </div>
   );
 }
