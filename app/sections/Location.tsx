@@ -3,7 +3,6 @@
 import localFont from 'next/font/local';
 import Image from 'next/image';
 import { Poppins as PoppinsFont } from 'next/font/google';
-import { LuX } from "react-icons/lu";
 import { AnimatedPinDemo } from '../components/location';
 
 const poppins = PoppinsFont({
@@ -31,19 +30,9 @@ export default function LocationSection() {
       <div className="flex flex-col lg:flex-row gap-10 items-start">
         {/* Location Image Block */}
         <div
-          className="relative rounded-[20px] overflow-hidden shadow-xl w-fit"
+          className="relative rounded-[20px] overflow-hidden shadow-xl w-fit hover:scale-105 transition-all delay-150 duration-300 ease-in-out"
           style={{ width: '671px', height: '718px', top: '-4px' }}
         >
-          <button
-            className="absolute top-2 right-2 z-20 w-10 h-10 rounded-[20px] shadow-md flex items-center justify-center"
-            style={{
-              background: 'rgba(60, 60, 60, 0.2)',
-              border: '1.5px solid #3C3C3CB2',
-              backdropFilter: 'blur(20px)',
-            }}
-          >
-            <LuX className="w-4 h-4 text-[#3C3C3C]" />
-          </button>
 
           <Image
             src="/location_image.jpg"
@@ -73,11 +62,34 @@ export default function LocationSection() {
             Chakan, Pune 410 501
           </p>
         </div>
+        
+        <div
+          className="relative rounded-[20px] overflow-hidden shadow-xl w-fit hover:scale-105 transition-all delay-150 duration-300 ease-in-out"
+          style={{ width: '671px', height: '718px', top: '-4px', left:'40px' }}
+        >
 
-        {/* AnimatedPinDemo on the right */}
-        <div className="flex-1">
-          <AnimatedPinDemo />
+          <Image
+            src="/location-pratik.png"
+            alt="Background"
+            fill
+            className="object-cover"
+            style={{ filter: 'blur(2px)' }}
+          />
+
+          <div
+            className="absolute left-0 top-0 h-full w-full z-10"
+            style={{
+              background:
+                'linear-gradient(180deg, rgba(60, 60, 60, 0) 45.5%, rgba(140, 140, 140, 0.7) 100%)',
+            }}
+          />
+
+          {/* AnimatedPinDemo on the right */}
+              <div className="flex-1">
+                <AnimatedPinDemo />
+              </div>
         </div>
+        
       </div>
     </section>
   );

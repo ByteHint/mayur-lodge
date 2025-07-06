@@ -76,6 +76,7 @@ export default function Navbar() {
         <div className="absolute right-[8px] top-[1px] h-[30px] mt-5 md:mt-0 flex items-center gap-[8px] md:gap-[10px] md:static md:h-[48px]">
   
           {/* User Icon */}
+          <Link href="/profile">
           <div className="border border-gray-400 rounded-full p-[6px] hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -92,6 +93,7 @@ export default function Navbar() {
               />
             </svg>
           </div>
+        </Link>
         </div>
 
     <div className="hidden md:flex items-center gap-2">

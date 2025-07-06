@@ -11,7 +11,7 @@ const poppins = PoppinsFont({
 
 export function AnimatedPinDemo() {
   return (
-    <div className="h-[40rem] w-full flex items-center justify-center ">
+    <div className="h-[40rem] w-full flex items-center justify-center">
       <PinContainer
         title="Pratik lodge"
         href="https://maps.app.goo.gl/yAVt3C1vgSxuk7uf8"
