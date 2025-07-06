@@ -5,7 +5,7 @@ import { Poppins } from 'next/font/google';
 const poppins = Poppins({ weight: '400', subsets: ['latin'] });
 
 export function FlipWordsDemo() {
-  const words = ["Accessible", "Beautiful", "Modern"];
+  const words = ["Accessible", "Peaceful", "Cozy", "Modern", "Serene"];
 
   return (
       <div className={`${poppins.className} text-[#3C3C3C] text-[20px] md:text-[22px] font-normal`}>

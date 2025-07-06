@@ -47,11 +47,11 @@ export default function Home() {
         <AboutUsPage />
       </div>
 
-      <div id="facilities" className="pt-0 mt-0">
+      <div id="facilities" className="-mt-20">
         <FacilitiesServices />
       </div>
 
-      <div id="review" className="pt-0 mt-0">
+      <div id="review" className="-mt-20">
         <UserReview />
       </div>
       
