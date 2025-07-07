@@ -2,7 +2,6 @@
 
 import localFont from "next/font/local";
 import { Heart, ArrowLeft, ArrowRight } from "lucide-react";
-//import Image from "next/image";
 import Link from "next/link";
 
 const kugile = localFont({
@@ -53,7 +52,7 @@ interface RoomCardProps {
 
 const RoomCard: React.FC<RoomCardProps> = ({ card }) => (
   <div
-    className="relative rounded-2xl overflow-hidden shadow-md w-full max-w-sm mx-auto flex flex-col justify-between text-white" // Changed justify-end to justify-between, removed bg-[#f3f3f3]
+    className="relative rounded-2xl overflow-hidden shadow-md w-full max-w-sm mx-auto flex flex-col hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer justify-between text-white" 
     style={{
       backgroundImage: `url(${card.src})`,
       backgroundSize: "cover",
@@ -82,7 +81,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ card }) => (
 
     <div className="relative z-10 p-4 pt-0 flex justify-center">
       <Link href={`/rooms/${card.slug}`} passHref className="w-full">
-        <button className="bg-[#e1e1e1] bg-opacity-20 backdrop-filter backdrop-blur-sm text-[#3c3c3c] rounded-full py-2 px-2 text-sm flex items-center justify-center hover:bg-gray-400 focus:outline-none border border-white border-opacity-30 w-full">
+        <button className="bg-[#e1e1e1] bg-opacity-20 backdrop-filter backdrop-blur-sm text-[#3c3c3c] rounded-full py-2 px-2 text-sm flex items-center cursor-pointer justify-center hover:bg-gray-400 focus:outline-none border border-white border-opacity-30 w-full">
           {card.button} <span className="ml-2">&#8594;</span>
         </button>
       </Link>
