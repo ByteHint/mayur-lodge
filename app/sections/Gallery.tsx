@@ -2,7 +2,7 @@
 
 import localFont from "next/font/local";
 import { Heart, ArrowLeft, ArrowRight } from "lucide-react";
-import Image from "next/image";
+//import Image from "next/image";
 import Link from "next/link";
 
 const kugile = localFont({
