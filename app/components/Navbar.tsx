@@ -61,16 +61,13 @@ export default function Navbar() {
           <button onClick={() => scrollToSection('location')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
             location
           </button>
-          
-          <button onClick={() => scrollToSection('menu')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out uppercase">
-            menu
-          </button>
         </div>
 
-
-        <button className={`${aderoTrial.className} bg-[#F3F3F3] text-[#3C3C3C] text-sm border border-[#3C3C3C] px-2 py-2 rounded-3xl hover:scale-105 transition`}>
-          Reach Out
-        </button>
+        <Link href="/contact">
+          <button className={`${aderoTrial.className} bg-[#F3F3F3] text-[#3C3C3C] text-sm border border-[#3C3C3C] px-2 py-2 rounded-3xl hover:scale-105 transition cursor-pointer`}>
+            Reach Out
+          </button>
+        </Link>
 
         {/* Icons + Auth */}
         <div className="absolute right-[8px] top-[1px] h-[30px] mt-5 md:mt-0 flex items-center gap-[8px] md:gap-[10px] md:static md:h-[48px]">

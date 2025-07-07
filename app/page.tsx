@@ -10,6 +10,7 @@ import LocationSection from './sections/Location';
 import FAQPage from './components/FAQpage';
 import Gallery from './sections/Gallery';
 import UserReview from './sections/Review';
+import Footer from './sections/Footer';
 
 
 
@@ -57,6 +58,10 @@ export default function Home() {
       
       <div id="FAQ" className="pt-0 mt-0">
         <FAQPage />
+      </div>
+
+      <div className="pt-0 mt-0">
+        <Footer />
       </div>
     </div>
   );

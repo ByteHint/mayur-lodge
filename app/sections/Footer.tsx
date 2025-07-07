@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaWhatsapp, FaInstagram, FaEnvelope } from "react-icons/fa";
 import localFont from 'next/font/local';
+import Link from "next/dist/client/link";
 
 const kugile = localFont({
   src: '../fonts/Kugile_Demo.ttf',
@@ -48,14 +49,15 @@ export default function Footer() {
           <p className="text-[14px] mt-2 md:text-base text-gray-600 mb-6 tracking-wider">
             Endless Options, We Find The Best Deals.
           </p>
-
+        
+        <Link href="/contact">
           <button
-            className="bg-[#3C3C3C] text-white py-3 px-0 sm:px-8 sm:py-3 hover:bg-gray-800 transition-all text-sm sm:text-lg shadow-lg mb-8 sm:mb-10 w-[90px] sm:w-auto sm:rounded-full"
+            className="bg-[#3C3C3C] text-white py-3 px-0 sm:px-8 sm:py-3 hover:bg-gray-800 transition-all text-sm sm:text-lg shadow-lg mb-8 sm:mb-10 w-[90px] sm:w-auto sm:rounded-full cursor-pointer"
             style={{ borderRadius: "7.35px" }}
           >
             Reach Out
           </button>
-
+        </Link>
 
         </div>
 

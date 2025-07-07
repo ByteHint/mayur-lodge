@@ -8,6 +8,7 @@ import { Calendar23 } from './DatePicker';
 import { FlipWordsDemo } from './FlipWords';
 
 
+
 const kugile = localFont({
   src: '../fonts/Kugile_Demo.ttf',
   variable: '--font-kugile',
@@ -21,25 +22,34 @@ const aderoTrial = localFont({
 });
 
 export default function Hero() {
+
+  const scrollToSection = (id: string) => {
+    const elem = document.getElementById(id);
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-[#FFFFFF]">
-      <div className="w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-16">
+      <div className="w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-16 pl-12 sm:pl-0">
         {/* Hero Box */}
-        <div className="bg-[#F3F3F3] -ml-4 w-full md:h-[645px] h-[600px] rounded-3xl flex relative overflow-hidden">
+        <div className="flex relative bg-[#F3F3F3] -ml-4 w-full md:h-[645px] h-[850px] rounded-3xl overflow-hidden">
 
             {/* Desktop Version */}
             <div className="hidden sm:flex flex-col justify-start w-full sm:w-1/2 px-6 pt-16 gap-6 z-10 bg-[#F3F3F3] text-left">
-              <h1 className={`${kugile.className} text-[48px] md:text-[64px] lg:text-[80px] font-normal leading-tight text-[#3C3C3C]`}>
+              <h1 className={`${kugile.className} text-[48px] sm:text-[64px] lg:text-[80px] font-normal leading-tight text-[#3C3C3C]`}>
                 Experience <br /> Luxury
               </h1>
 
               <FlipWordsDemo />
 
               <div className="hidden md:flex gap-4">
-                <button className={`${aderoTrial.className} bg-[#3C3C3C] text-[#F3F3F3] px-4 py-2 rounded-3xl hover:scale-105 transition`}>
+                <button className={`${aderoTrial.className} bg-[#3C3C3C] text-[#F3F3F3] px-4 py-2 rounded-3xl hover:scale-105 transition cursor-pointer`}>
                   Reserve Now
                 </button>
-                <button className={`${aderoTrial.className} bg-[#F3F3F3] text-[#3C3C3C] border border-[#3C3C3C] px-4 py-2 rounded-3xl hover:scale-105 transition`}>
+
+                <button onClick={() => scrollToSection('gallery')} className={`${aderoTrial.className} bg-[#F3F3F3] text-[#3C3C3C] border border-[#3C3C3C] px-4 py-2 rounded-3xl hover:scale-105 transition cursor-pointer`}>
                   Rooms
                 </button>
               </div>
@@ -47,16 +57,13 @@ export default function Hero() {
 
             {/* Mobile Version */}
             <div className="sm:hidden absolute top-[80px] left-1/2 transform -translate-x-1/2 z-20 text-left px-4 w-full">
-              <h1 className={`${kugile.className} text-[48px] font-normal leading-tight text-[#3C3C3C] drop-shadow-md`}>
+              <h1 className={`${kugile.className} text-[56px] leading-tight text-[#3C3C3C] drop-shadow-md`}>
                 Experience <br /> Luxury
               </h1>
+
               <FlipWordsDemo />
-              <div className="mt-4 flex justify-center gap-4">
-              </div>
             </div>
-
-
-                      
+ 
           {/*Image */}
           <div className="w-full sm:w-1/2 relative h-full">
             <Image
@@ -85,7 +92,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="absolute left-1/2 transform -translate-x-1/2 bottom-90 sm:bottom-4 w-[80%] max-w-[1300px] h-auto border border-white/100 rounded-2xl backdrop-blur-[10px] bg-[#0000000D]/70 flex flex-col sm:flex-row justify-between items-center px-4 py-4 gap-4 z-30 shadow-[0px_4px_11.6px_0px_#00000026]">    
+          <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[200px] sm:bottom-4 w-[80%] max-w-[1300px] h-auto border border-white/100 rounded-2xl backdrop-blur-[10px] bg-[#0000000D]/70 flex flex-col sm:flex-row justify-between items-center px-4 py-4 gap-4 z-30 shadow-[0px_4px_11.6px_0px_#00000026]">    
                <div className={`${aderoTrial.className} hidden md:flex justify-center items-center w-[222px] h-[28px] whitespace-nowrap uppercase text-[#3C3C3C] pl-[50px] text-[20px] font-bold tracking-widest `}>
                   Pratik Lodge
                 </div>

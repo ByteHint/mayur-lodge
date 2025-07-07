@@ -130,7 +130,7 @@ export default function RoomDetailPage({ params }: RoomDetailPageProps) {
         </div>
 
         <h3 className="text-2xl font-Raleway mb-4">Features:</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8 cursor-pointer">
           {room.features.map((feature, index) => (
             <div
               key={index}
@@ -152,7 +152,7 @@ export default function RoomDetailPage({ params }: RoomDetailPageProps) {
               {room.gallery.map((imgSrc, index) => (
                 <div
                   key={index}
-                  className="relative w-full h-32 sm:h-40 rounded-md overflow-hidden shadow"
+                  className="relative w-full h-32 sm:h-40 rounded-md overflow-hidden shadow hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer"
                 >
                   <Image
                     src={imgSrc}
