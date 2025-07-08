@@ -62,15 +62,15 @@ export default function Footer() {
         </div>
 
         {/* Right: Social Icons */}
-        <div className="flex gap-4 -mt-8 md:flex-shrink-0 md:mt-60">
+        <div className="flex gap-6 -mt-8 md:flex-shrink-0 md:mt-60">
           <a href="https://wa.me/+917559319992">
-            <FaWhatsapp className="text-2xl hover:text-green-500" />
+            <FaWhatsapp className="text-3xl hover:text-green-500" />
           </a>
           <a href="https://www.instagram.com">
-            <FaInstagram className="text-2xl hover:text-pink-600" />
+            <FaInstagram className="text-3xl hover:text-pink-600" />
           </a>
           <a href="mailto:pratiklodge203@gmail.com">
-            <FaEnvelope className="text-2xl hover:text-blue-600" />
+            <FaEnvelope className="text-3xl hover:text-blue-600" />
           </a>
         </div>
       </div>

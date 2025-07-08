@@ -39,13 +39,12 @@ export default function Navbar() {
     <div className="sticky top-0 z-50 bg-[#FFFFFF] text-[#3C3C3C] w-full mb-4 shadow-sm">
       <div className="relative flex items-center justify-between w-full mx-auto px-4 py-2 sm:px-6 md:px-10 lg:px-16 h-[72px]">
 
-        {/* Logo - Left */}
+
         <div className={`${kugile.className} text-2xl sm:text-4xl mt-2 md:mt-0 font-normal tracking-wider whitespace-nowrap`}>  
           <Link href="/">Pratik Lodge</Link>
         </div>
 
-        {/* Nav Links - Centered */}
-        <div className={`${aderoTrial.className} hidden md:flex absolute left-1/2 transform -translate-x-1/2 gap-10 text-sm font-semibold`}>
+        <div className={`${aderoTrial.className} hidden md:flex justify-center flex-1 gap-10 text-sm font-semibold`}>
           <button onClick={() => scrollToSection('about')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer uppercase">
             About Us
           </button>
@@ -60,10 +59,9 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Right Section */}
         <div className="hidden md:flex items-center gap-5">
           <Link href="/contact">
-            <button className={`${aderoTrial.className} bg-[#F3F3F3] text-[#3C3C3C] text-sm border border-[#3C3C3C] px-3 py-2 rounded-3xl hover:scale-105 transition cursor-pointer`}>
+            <button className={`${aderoTrial.className} bg-white text-[#3C3C3C] text-sm border border-[#3C3C3C] px-3 py-2 rounded-3xl hover:scale-105 transition cursor-pointer`}>
               Reach Out
             </button>
           </Link>
@@ -133,18 +131,23 @@ export default function Navbar() {
           <button onClick={() => scrollToSection('facilities')} className="uppercase">Facilities & Services</button>
           <button onClick={() => scrollToSection('gallery')} className="uppercase">Gallery</button>
           <button onClick={() => scrollToSection('location')} className="uppercase">Location</button>
+          
           <Link href="/contact">
-            <button className="text-left">Reach Out</button>
+            <button className="px-6 py-2 text-center uppercase border border-[#3C3C3C] rounded-3xl mx-auto block">
+              Reach Out
+            </button>
           </Link>
-          <Link href="/profile">
-            <button className="text-left">Profile</button>
+
+          <Link href="/profile" className="w-full">
+            <button className="w-full text-center uppercase">Profile</button>
           </Link>
+
           <SignedOut>
             <SignInButton>
-              <button className="text-left">Sign In</button>
+              <button className="items-center">Sign In</button>
             </SignInButton>
             <SignUpButton>
-              <button className="text-left">Sign Up</button>
+              <button className="items-center">Sign Up</button>
             </SignUpButton>
           </SignedOut>
         </div>
