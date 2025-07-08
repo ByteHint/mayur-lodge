@@ -79,13 +79,13 @@ export async function generateStaticParams() {
   }));
 }
 
-interface RoomDetailPageProps {
-  params: Promise<{ slug: string }>;
-}
-
-export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
-  const { slug } = await params;
-
+// ✅ FIXED THIS PART:
+export default function RoomDetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { slug } = params;
   const room = roomDetailsData.find((r) => r.slug === slug);
 
   if (!room) {
@@ -132,8 +132,7 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
           {room.features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-4 bg-[#E1E1E1] rounded-lg shadow-sm text-center
-                         transition-transform duration-300 hover:scale-105 hover:shadow-md"
+              className="flex flex-col items-center justify-center p-4 bg-[#E1E1E1] rounded-lg shadow-sm text-center transition-transform duration-300 hover:scale-105 hover:shadow-md"
             >
               {feature.icon && (
                 <feature.icon className="text-[#3c3c3c] text-3xl mb-2" />
