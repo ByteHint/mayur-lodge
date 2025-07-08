@@ -77,9 +77,6 @@ export default function Hero() {
             </h1>
             <FlipWordsDemo />
             <div className="hidden md:flex gap-4">
-              <button className={`${aderoTrial.className} bg-[#3C3C3C] text-[#F3F3F3] px-4 py-2 rounded-3xl hover:scale-105 transition cursor-pointer`}>
-                Reserve Now
-              </button>
               <button onClick={() => scrollToSection('gallery')} className={`${aderoTrial.className} bg-[#F3F3F3] text-[#3C3C3C] border border-[#3C3C3C] px-4 py-2 rounded-3xl hover:scale-105 transition cursor-pointer`}>
                 Rooms
               </button>
