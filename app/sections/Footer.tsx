@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FaWhatsapp, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { PiPhoneCallBold } from "react-icons/pi";
 import localFont from 'next/font/local';
 import Link from "next/dist/client/link";
 
@@ -66,8 +67,8 @@ export default function Footer() {
           <a href="https://wa.me/+917559319992">
             <FaWhatsapp className="text-3xl hover:text-green-500" />
           </a>
-          <a href="https://www.instagram.com">
-            <FaInstagram className="text-3xl hover:text-pink-600" />
+          <a href="tel:+917559319992">
+            <PiPhoneCallBold className="text-3xl hover:text-purple-600" />
           </a>
           <a href="mailto:pratiklodge203@gmail.com">
             <FaEnvelope className="text-3xl hover:text-blue-600" />
