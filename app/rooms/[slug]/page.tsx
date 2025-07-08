@@ -39,8 +39,8 @@ const roomDetailsData = [
       { name: "Entertainment", icon: FaTv },
       { name: "Accommodates 2-3 people", icon: FaUsers },
     ],
-    mainImage: "/Room2.jpg",
-    gallery: ["/Room2.jpg", "/pic6.jpg", "/pic7.jpg"],
+    mainImage: "/deluxroom1.jpg",
+    gallery: ["/deluxroom1.jpg", "/deluxroom2.jpg", "/deluxroom3.jpg"],
   },
   {
     slug: "family-hut",
