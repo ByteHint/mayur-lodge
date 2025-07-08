@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import localFont from "next/font/local";
 import Image from "next/image";
 import Link from "next/link";
-
 import { FaWifi, FaRegBell, FaTv, FaUsers } from "react-icons/fa";
 
 const kugile = localFont({
@@ -59,6 +58,7 @@ const roomDetailsData = [
   },
 ];
 
+// ✅ Correct typing for generateMetadata
 export async function generateMetadata({
   params,
 }: {
@@ -73,19 +73,20 @@ export async function generateMetadata({
   };
 }
 
+// ✅ Correct static params
 export async function generateStaticParams() {
   return roomDetailsData.map((room) => ({
     slug: room.slug,
   }));
 }
 
-// ✅ FIXED THIS PART:
-export default function RoomDetailPage({
+// ✅ ✅ ✅ THE FIXED PART: Async component + plain object param
+export default async function RoomDetailPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  const { slug } = params;
+  const slug = params.slug;
   const room = roomDetailsData.find((r) => r.slug === slug);
 
   if (!room) {
@@ -111,8 +112,8 @@ export default function RoomDetailPage({
           <Image
             src={room.mainImage}
             alt={room.title}
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
             quality={90}
           />
         </div>
@@ -134,15 +135,13 @@ export default function RoomDetailPage({
               key={index}
               className="flex flex-col items-center justify-center p-4 bg-[#E1E1E1] rounded-lg shadow-sm text-center transition-transform duration-300 hover:scale-105 hover:shadow-md"
             >
-              {feature.icon && (
-                <feature.icon className="text-[#3c3c3c] text-3xl mb-2" />
-              )}
+              <feature.icon className="text-[#3c3c3c] text-3xl mb-2" />
               <span className="text-base font-Raleway">{feature.name}</span>
             </div>
           ))}
         </div>
 
-        {room.gallery && room.gallery.length > 1 && (
+        {room.gallery.length > 1 && (
           <>
             <h3 className="text-2xl font-Raleway mb-4">Gallery:</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
@@ -154,8 +153,8 @@ export default function RoomDetailPage({
                   <Image
                     src={imgSrc}
                     alt={`${room.title} - Image ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    className="object-cover"
                     quality={75}
                   />
                 </div>
