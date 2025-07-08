@@ -80,13 +80,11 @@ export async function generateStaticParams() {
 }
 
 interface RoomDetailPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
-export default function RoomDetailPage({ params }: RoomDetailPageProps) {
-  const { slug } = params;
+export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
+  const { slug } = await params;
 
   const room = roomDetailsData.find((r) => r.slug === slug);
 
