@@ -18,7 +18,7 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
-export function Calendar22() {
+export function Calendar22({ onDateChange }: { onDateChange: (date: Date) => void }) {
   const [open, setOpen] = React.useState(false)
   const [date, setDate] = React.useState<Date | undefined>(undefined)
 
@@ -43,8 +43,11 @@ export function Calendar22() {
             mode="single"
             selected={date}
             captionLayout="dropdown"
-            onSelect={(date) => {
-              setDate(date)
+            onSelect={(selected) => {
+              if (selected) {
+                setDate(selected)
+                onDateChange(selected)  // ✅ notify parent
+              }
               setOpen(false)
             }}
           />
@@ -54,7 +57,7 @@ export function Calendar22() {
   )
 }
 
-export function Calendar23() {
+export function Calendar23({ onDateChange }: { onDateChange: (date: Date) => void }) {
   const [open, setOpen] = React.useState(false)
   const [date, setDate] = React.useState<Date | undefined>(undefined)
 
@@ -79,8 +82,11 @@ export function Calendar23() {
             mode="single"
             selected={date}
             captionLayout="dropdown"
-            onSelect={(date) => {
-              setDate(date)
+            onSelect={(selected) => {
+              if (selected) {
+                setDate(selected)
+                onDateChange(selected)  // ✅ notify parent
+              }
               setOpen(false)
             }}
           />

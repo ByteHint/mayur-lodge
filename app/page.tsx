@@ -1,11 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUsPage from './sections/About';
 import FacilitiesServices from './sections/Facilities';
-import PromoBanner from './sections/PromoBanner';
 import LocationSection from './sections/Location';
 import FAQPage from './components/FAQpage';
 import Gallery from './sections/Gallery';
@@ -17,9 +15,6 @@ import Footer from './sections/Footer';
 export default function Home() {
   return (
     <div className="w-full bg-[#FFFFFF] text-white">
-      <PromoBanner />
-      <Navbar />
-     
 
       {/* Hero Section */}
       <div className="relative w-full h-screen overflow-hidden">
