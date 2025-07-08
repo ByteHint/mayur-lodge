@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Hero from './components/Hero';
 import AboutUsPage from './sections/About';
@@ -10,9 +12,27 @@ import Gallery from './sections/Gallery';
 import UserReview from './sections/Review';
 import Footer from './sections/Footer';
 
-
-
 export default function Home() {
+  const searchParams = useSearchParams();
+  const scrollTo = searchParams.get("scrollTo");
+
+ useEffect(() => {
+  if (scrollTo) {
+    // Delay ensures DOM is ready
+    setTimeout(() => {
+      const el = document.getElementById(scrollTo);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+
+        // ✅ Clean the URL by removing ?scrollTo param
+        const newUrl = window.location.pathname;
+        window.history.replaceState({}, '', newUrl);
+      }
+    }, 100);
+  }
+}, [scrollTo]);
+
+
   return (
     <div className="w-full bg-[#FFFFFF] text-white">
 
@@ -30,7 +50,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Sections — ensure no top margins that create gaps */}
+      {/* Sections */}
       <div id="gallery" className="pt-0 mt-0">
         <Gallery />
       </div>
@@ -50,7 +70,7 @@ export default function Home() {
       <div id="review" className="-mt-20">
         <UserReview />
       </div>
-      
+
       <div id="FAQ" className="pt-0 mt-0">
         <FAQPage />
       </div>

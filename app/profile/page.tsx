@@ -40,15 +40,15 @@ export default function ProfilePage() {
 
         <h1 className={`${kugile.className} text-[67px] mb-6 w-[410px] h-[61px]`}>My Profile</h1>
 
-        <div className="flex gap-6 mb-8 mt-10 text-[#3C3C3C] sm:text-[28px] pl-2">
-          <div className={`${poppins.className} flex items-center text-[12px] whitespace-nowrap gap-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer`}>
+        <div className="flex gap-6 mb-8 mt-10 text-[#3C3C3C] text-[12px] sm:text-[28px] pl-2">
+          <div className={`${poppins.className} flex items-center whitespace-nowrap gap-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer`}>
             <span>
               <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" clipRule="evenodd" d="M10 3.91352C8.45602 3.91352 7.20434 5.15717 7.20434 6.6913C7.20434 8.22542 8.45602 9.46908 10 9.46908C11.5441 9.46908 12.7957 8.22542 12.7957 6.6913C12.7957 5.15717 11.5441 3.91352 10 3.91352ZM5.91402 6.6913C5.91402 4.44912 7.74339 2.63147 10 2.63147C12.2567 2.63147 14.0861 4.44912 14.0861 6.6913C14.0861 8.93348 12.2567 10.7511 10 10.7511C7.74339 10.7511 5.91402 8.93348 5.91402 6.6913Z" fill="#3C3C3C"/>
                 <path fillRule="evenodd" clipRule="evenodd" d="M7.88852 13.7426C6.08541 13.7426 4.6237 15.1949 4.6237 16.9865C4.6237 17.0806 4.641 17.1469 4.65914 17.1856C4.67445 17.2183 4.68759 17.2275 4.69855 17.2335C5.19994 17.5045 6.60572 18.0161 10 18.0161C13.3944 18.0161 14.8001 17.5045 15.3015 17.2335C15.3125 17.2275 15.3256 17.2183 15.3409 17.1856C15.3591 17.1469 15.3764 17.0806 15.3764 16.9865C15.3764 15.1949 13.9147 13.7426 12.1116 13.7426H7.88852ZM3.33337 16.9865C3.33337 14.4869 5.37278 12.4605 7.88852 12.4605H12.1116C14.6273 12.4605 16.6667 14.4869 16.6667 16.9865C16.6667 17.4453 16.4995 18.0453 15.9183 18.3596C15.1483 18.7759 13.4966 19.2981 10 19.2981C6.50349 19.2981 4.85176 18.7759 4.08181 18.3596C3.50057 18.0453 3.33337 17.4453 3.33337 16.9865Z" fill="#3C3C3C"/>
                 </svg>
             </span> My Information</div>
-          <div className={`${poppins.className} text-[#808080] text-[12px] whitespace-nowrap flex items-center gap-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer`}>
+          <div className={`${poppins.className} text-[#808080] whitespace-nowrap flex items-center gap-2 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer`}>
             <span>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.17143 1.96484V21.1648M17.0857 10.1934H12.2857M17.0857 6.07913H12.2857M4.74286 6.07913H2M4.74286 10.1934H2M4.74286 14.3077H2M6.11428 21.1648H18.4571C19.972 21.1648 21.2 19.9368 21.2 18.422V4.7077C21.2 3.19286 19.972 1.96484 18.4571 1.96484H6.11428C4.59945 1.96484 3.37143 3.19286 3.37143 4.7077V18.422C3.37143 19.9368 4.59945 21.1648 6.11428 21.1648Z" stroke="#808080" strokeWidth="1.5" strokeLinecap="round"/>
@@ -146,7 +146,7 @@ export default function ProfilePage() {
 
         
         <div className="text-center">
-          <button className={`${poppins.className} bg-[#3C3C3C] text-[#FFFFFF] px-16 py-5 rounded-[22px] hover:scale-105 transition-all`}>
+          <button onClick={() => alert("Changes saved")} className={`${poppins.className} bg-[#3C3C3C] text-[#FFFFFF] px-16 py-5 rounded-[22px] hover:scale-105 transition-all cursor-pointer`}>
             Save Changes
           </button>
         </div>

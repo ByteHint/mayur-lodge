@@ -16,7 +16,7 @@ export default function ContactUs() {
         
         <div className="flex h-full w-full gap-4">
 
-          <div className="hidden sm:relative w-[380px] h-full rounded-[20px] overflow-hidden">
+          <div className="hidden sm:block sm:relative w-[380px] h-full rounded-[20px] overflow-hidden">
             <Image
               src="/contactUs.jpg"
               alt="Left Image"
