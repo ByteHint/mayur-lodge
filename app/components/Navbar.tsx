@@ -45,37 +45,35 @@ export default function Navbar() {
   return (
     <div className="sticky top-0 z-50 bg-[#FFFFFF] text-[#3C3C3C] w-full mb-4 shadow-sm">
       <div className="relative flex items-center justify-between w-full mx-auto px-4 py-2 sm:px-6 md:px-10 lg:px-16 h-[72px]">
-        {/* Logo */}
+
         <div className={`${kugile.className} text-2xl sm:text-4xl mt-2 md:mt-0 font-normal tracking-wider whitespace-nowrap`}>
           <Link href="/">Pratik Lodge</Link>
         </div>
 
-        {/* Desktop Nav Links */}
         <div className={`${aderoTrial.className} hidden md:flex justify-center flex-1 gap-10 text-sm font-semibold`}>
-          <button onClick={() => goToSection('about')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer uppercase">
+          <button onClick={() => goToSection('about')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-100 ease-in-out cursor-pointer uppercase">
             About Us
           </button>
-          <button onClick={() => goToSection('facilities')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer uppercase">
+          <button onClick={() => goToSection('facilities')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-100 ease-in-out cursor-pointer uppercase">
             Facilities & Services
           </button>
-          <button onClick={() => goToSection('gallery')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer uppercase">
+          <button onClick={() => goToSection('gallery')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-100 ease-in-out cursor-pointer uppercase">
             Gallery
           </button>
-          <button onClick={() => goToSection('location')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer uppercase">
+          <button onClick={() => goToSection('location')} className="hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-100 ease-in-out cursor-pointer uppercase">
             Location
           </button>
         </div>
 
-        {/* Right Actions */}
         <div className="hidden md:flex items-center gap-5">
           <Link href="/contact">
-            <button className={`${aderoTrial.className} bg-white text-[#3C3C3C] text-sm border border-[#3C3C3C] px-3 py-2 rounded-3xl hover:scale-105 transition cursor-pointer`}>
+            <button className={`${aderoTrial.className} bg-white text-[#3C3C3C] text-sm border border-[#3C3C3C] px-3 py-2 rounded-3xl hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-100 ease-in-out cursor-pointer`}>
               Reach Out
             </button>
           </Link>
 
           <Link href="/profile">
-            <div className="border border-gray-400 rounded-full p-[6px] hover:scale-105 transition-all delay-150 duration-300 ease-in-out">
+            <div className="border border-gray-400 rounded-full p-[6px] hover:scale-105 transition-all delay-150 duration-100 ease-in-out">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-[16px] h-[16px] text-black">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
               </svg>
@@ -84,12 +82,12 @@ export default function Navbar() {
 
           <SignedOut>
             <SignInButton>
-              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
+              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-100 ease-in-out text-sm border border-gray-100">
                 Sign In
               </button>
             </SignInButton>
             <SignUpButton>
-              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-300 ease-in-out text-sm border border-gray-300">
+              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-100 ease-in-out text-sm border border-gray-100">
                 Sign Up
               </button>
             </SignUpButton>
