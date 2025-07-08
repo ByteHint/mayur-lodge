@@ -4,12 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaWifi, FaRegBell, FaTv, FaUsers } from "react-icons/fa";
 
+// Load font
 const kugile = localFont({
   src: "../../fonts/Kugile_Demo.ttf",
   variable: "--font-kugile",
   display: "swap",
 });
 
+// Room Data
 const roomDetailsData = [
   {
     slug: "regular-room",
@@ -30,7 +32,7 @@ const roomDetailsData = [
     slug: "deluxe-room",
     title: "Deluxe Room",
     description:
-      "Indulge in the luxury of our deluxe room, designed with elegant interiors and plush comforts to elevate your stay. Enjoy premium facilities like high-speed Wi-Fi, smart TV, AC, and quick room service in a serene, spacious setting",
+      "Indulge in the luxury of our deluxe room, designed with elegant interiors and plush comforts.",
     price: "₹1799 / night",
     features: [
       { name: "High-speed Wi-Fi", icon: FaWifi },
@@ -45,7 +47,7 @@ const roomDetailsData = [
     slug: "family-hut",
     title: "Family Hut",
     description:
-      "Our Family Hut offers ample space and privacy, perfect for families or small groups. Features multiple beds and a private outdoor area.",
+      "Our Family Hut offers ample space and privacy, perfect for families or small groups.",
     price: "₹2299 / night",
     features: [
       { name: "Free Wi-Fi", icon: FaWifi },
@@ -58,6 +60,14 @@ const roomDetailsData = [
   },
 ];
 
+// ✅ Generate Static Paths
+export async function generateStaticParams() {
+  return roomDetailsData.map((room) => ({
+    slug: room.slug,
+  }));
+}
+
+// ✅ Generate Metadata
 export async function generateMetadata({
   params,
 }: {
@@ -66,90 +76,58 @@ export async function generateMetadata({
   const room = roomDetailsData.find((r) => r.slug === params.slug);
   return {
     title: room ? `Mayur Lodge - ${room.title}` : "Mayur Lodge - Room Details",
-    description: room
-      ? room.description
-      : "Details about our comfortable rooms at Mayur Lodge.",
+    description: room?.description || "Room details at Mayur Lodge.",
   };
 }
 
-export async function generateStaticParams() {
-  return roomDetailsData.map((room) => ({
-    slug: room.slug,
-  }));
-}
-
-// ✅ FIXED: using `params: any` to prevent TS constraint errors
-export default async function RoomDetailPage({ params }: { params: { slug: string } }) {
-  const slug = params.slug;
-  const room = roomDetailsData.find((r) => r.slug === slug);
+// ✅ Final Page — no unnecessary types
+export default function Page({ params }: { params: { slug: string } }) {
+  const room = roomDetailsData.find((r) => r.slug === params.slug);
 
   if (!room) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-xl text-gray-700">
+      <div className="min-h-screen flex items-center justify-center text-lg text-gray-700">
         Room not found.
       </div>
     );
   }
 
   return (
-    <div
-      className={`min-h-screen bg-[#F8F8F8] text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24 pt-28 ${kugile.variable}`}
-    >
-      <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-        <h1
-          className={`${kugile.className} text-4xl sm:text-5xl md:text-6xl text-center mb-8 text-gray-700`}
-        >
+    <div className={`min-h-screen bg-[#F8F8F8] pt-28 px-4 ${kugile.variable}`}>
+      <div className="max-w-4xl mx-auto bg-white p-6 rounded shadow">
+        <h1 className={`${kugile.className} text-4xl mb-4 text-center`}>
           {room.title}
         </h1>
-
-        <div className="relative w-full h-80 sm:h-96 rounded-lg overflow-hidden mb-8">
+        <div className="relative w-full h-80 mb-6 rounded overflow-hidden">
           <Image
             src={room.mainImage}
             alt={room.title}
             fill
             className="object-cover"
-            quality={90}
           />
         </div>
-
-        <p className="text-lg font-Raleway leading-relaxed mb-6">
-          {room.description}
-        </p>
-
-        <div className="flex items-baseline mb-6">
-          <span className="text-2xl font-bold text-red-600 mr-2">
-            {room.price}
-          </span>
-        </div>
-
-        <h3 className="text-2xl font-Raleway mb-4">Features:</h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-8 cursor-pointer">
-          {room.features.map((feature, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center p-4 bg-[#E1E1E1] rounded-lg shadow-sm text-center transition-transform duration-300 hover:scale-105 hover:shadow-md"
-            >
-              <feature.icon className="text-[#3c3c3c] text-3xl mb-2" />
-              <span className="text-base font-Raleway">{feature.name}</span>
+        <p className="text-lg mb-4">{room.description}</p>
+        <div className="text-xl font-semibold text-red-600 mb-4">{room.price}</div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {room.features.map((f, i) => (
+            <div key={i} className="bg-gray-100 p-4 rounded text-center">
+              <f.icon className="text-2xl mb-2" />
+              <p>{f.name}</p>
             </div>
           ))}
         </div>
 
         {room.gallery.length > 1 && (
           <>
-            <h3 className="text-2xl font-Raleway mb-4">Gallery:</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
-              {room.gallery.map((imgSrc, index) => (
-                <div
-                  key={index}
-                  className="relative w-full h-32 sm:h-40 rounded-md overflow-hidden shadow hover:scale-105 transition-all delay-150 duration-300 ease-in-out cursor-pointer"
-                >
+            <h2 className="text-2xl mt-8 mb-4">Gallery</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {room.gallery.map((img, i) => (
+                <div key={i} className="relative h-32 sm:h-40 rounded overflow-hidden">
                   <Image
-                    src={imgSrc}
-                    alt={`${room.title} - Image ${index + 1}`}
+                    src={img}
+                    alt={`Gallery ${i}`}
                     fill
                     className="object-cover"
-                    quality={75}
                   />
                 </div>
               ))}
@@ -157,10 +135,10 @@ export default async function RoomDetailPage({ params }: { params: { slug: strin
           </>
         )}
 
-        <div className="text-center mt-10">
+        <div className="mt-8 text-center">
           <Link
             href="/"
-            className="bg-[#3C3C3C] text-white py-3 px-0 sm:px-8 sm:py-3 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+            className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800"
           >
             Back to Home
           </Link>
