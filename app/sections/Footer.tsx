@@ -14,7 +14,7 @@ const kugile = localFont({
 export default function Footer() {
   return (
     <footer className="relative bg-[#FFFFFF] bg-opacity-80 backdrop-blur-sm text-gray-800 z-10 py-10 px-6 sm:px-12 lg:px-24 text-center overflow-hidden">
-      {/* Background Image with Rounded Corners & Side Padding on Mobile Only */}
+
       <div className="absolute inset-0 px-6 sm:px-12 md:px-0 z-0">
         <div className=" w-full h-[540px] md:w-full lg:h-full rounded-3xl md:rounded-none overflow-hidden relative">
           <Image
@@ -33,14 +33,13 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Main Content */}
+      
       <div className="relative z-10 max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Left: Logo */}
+        
         <div className={`${kugile.className} text-[35px] mt-60 font-kugile md:flex-shrink-0 md:mt-60`}>
           Mayur Lodge
         </div>
 
-        {/* Center: Heading + Text + Button */}
         <div className="flex-grow flex flex-col items-center text-center mt-0 mb-30 pr-0 md:pr-60">
           <h2 className={`${kugile.className} text-[22px] font-bold -mt-70 tracking-wide md:text-5xl md:font-normal md:mt-4 md:mb-2 whitespace-nowrap`}>
             Request More Information
@@ -62,7 +61,6 @@ export default function Footer() {
 
         </div>
 
-        {/* Right: Social Icons */}
         <div className="flex gap-6 -mt-8 md:flex-shrink-0 md:mt-60">
           <a href="https://wa.me/+917559319992">
             <FaWhatsapp className="text-3xl hover:text-green-500" />
@@ -76,7 +74,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Copyright */}
       <div className="relative z-10 text-center text-xs text-gray-500 mt-6">
         © Copyright 2025. All Rights Reserved by Mayur Lodge.
       </div>

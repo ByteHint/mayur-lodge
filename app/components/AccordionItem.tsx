@@ -28,9 +28,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       >
         <span>{question}</span>
         {isOpen ? (
-          <FaMinus className="text-gray-500" />
+          <FaMinus className="text-gray-500 cursor-pointer" />
         ) : (
-          <FaPlus className="text-gray-500" />
+          <FaPlus className="text-gray-500 cursor-pointer" />
         )}
       </button>
 

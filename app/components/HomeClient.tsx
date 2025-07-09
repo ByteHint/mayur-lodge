@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Image from 'next/image';
 import Hero from '../components/Hero';
 import AboutUsPage from '../sections/About';
 import FacilitiesServices from '../sections/Facilities';
@@ -30,22 +29,11 @@ export default function HomeClient() {
   }, [scrollTo]);
 
   return (
-    <div className="w-full bg-[#FFFFFF] text-white">
-      {/* Hero Section */}
+    <div className="w-full bg-[#FFFFFF]">
       <div className="relative w-full h-screen overflow-hidden">
-        <Image
-          src="/Home.jpg"
-          alt="Background"
-          fill
-          priority
-          className="object-cover brightness-75 will-change-transform"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
           <Hero />
-        </div>
       </div>
 
-      {/* Sections */}
       <div id="gallery" className="pt-0 mt-0">
         <Gallery />
       </div>

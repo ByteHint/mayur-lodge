@@ -55,7 +55,7 @@ export default function UserReview() {
       className="bg-white text-[#3C3C3C] py-16 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
     >
       <h2
-        className={`${kugile.className} text-2xl sm:text-3xl md:text-4xl mb-10 text-start`}
+        className={`${kugile.className} text-3xl md:text-4xl mb-10 text-start`}
       >
         Guest reviews
       </h2>

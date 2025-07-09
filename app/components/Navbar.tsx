@@ -2,13 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/nextjs";
 import { useRouter, usePathname } from 'next/navigation';
 
 import localFont from 'next/font/local';
@@ -65,37 +58,12 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="hidden md:flex items-center gap-5">
+        <div className="hidden md:flex items-center">
           <Link href="/contact">
             <button className={`${aderoTrial.className} bg-white text-[#3C3C3C] text-sm border border-[#3C3C3C] px-3 py-2 rounded-3xl hover:text-yellow-500 hover:scale-105 transition-all delay-150 duration-100 ease-in-out cursor-pointer`}>
               Reach Out
             </button>
           </Link>
-
-          <Link href="/profile">
-            <div className="border border-gray-400 rounded-full p-[6px] hover:scale-105 transition-all delay-150 duration-100 ease-in-out">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-[16px] h-[16px] text-black">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-              </svg>
-            </div>
-          </Link>
-
-          <SignedOut>
-            <SignInButton>
-              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-100 ease-in-out text-sm border border-gray-100">
-                Sign In
-              </button>
-            </SignInButton>
-            <SignUpButton>
-              <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-100 hover:scale-105 transition-all delay-150 duration-100 ease-in-out text-sm border border-gray-100">
-                Sign Up
-              </button>
-            </SignUpButton>
-          </SignedOut>
-
-          <SignedIn>
-            <UserButton afterSignOutUrl="/" />
-          </SignedIn>
         </div>
 
         {/* Hamburger for Mobile */}
@@ -133,18 +101,6 @@ export default function Navbar() {
             </button>
           </Link>
 
-          <Link href="/profile" className="w-full">
-            <button className="w-full text-center uppercase">Profile</button>
-          </Link>
-
-          <SignedOut>
-            <SignInButton>
-              <button className="items-center">Sign In</button>
-            </SignInButton>
-            <SignUpButton>
-              <button className="items-center">Sign Up</button>
-            </SignUpButton>
-          </SignedOut>
         </div>
       )}
     </div>
