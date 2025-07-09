@@ -32,7 +32,7 @@ export function Calendar22({ onDateChange }: { onDateChange: (date: Date) => voi
           <Button
             variant="outline"
             id="date"
-            className="w-48 justify-between font-normal"
+            className="w-48 justify-between font-normal cursor-pointer"
           >
             {date ? date.toLocaleDateString() : "Select date"}
             <ChevronDownIcon />
@@ -46,7 +46,7 @@ export function Calendar22({ onDateChange }: { onDateChange: (date: Date) => voi
             onSelect={(selected) => {
               if (selected) {
                 setDate(selected)
-                onDateChange(selected)  // ✅ notify parent
+                onDateChange(selected)  
               }
               setOpen(false)
             }}
@@ -71,7 +71,7 @@ export function Calendar23({ onDateChange }: { onDateChange: (date: Date) => voi
           <Button
             variant="outline"
             id="date"
-            className="w-48 justify-between font-normal"
+            className="w-48 justify-between font-normal cursor-pointer"
           >
             {date ? date.toLocaleDateString() : "Select date"}
             <ChevronDownIcon />
@@ -85,7 +85,7 @@ export function Calendar23({ onDateChange }: { onDateChange: (date: Date) => voi
             onSelect={(selected) => {
               if (selected) {
                 setDate(selected)
-                onDateChange(selected)  // ✅ notify parent
+                onDateChange(selected)  
               }
               setOpen(false)
             }}
