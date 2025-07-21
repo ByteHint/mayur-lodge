@@ -168,6 +168,15 @@ export default async function RoomDetailPage({
             Back to Home
           </Link>
         </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/booking"
+            className="bg-[#3C3C3C] text-white py-3 px-6 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+          >
+            BOOK NOW 
+          </Link>
+        </div>
       </div>
     </div>
   );
