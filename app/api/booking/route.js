@@ -5,13 +5,10 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   try {
-    // Parse request body
     const { name, email, phone, roomType, checkIn, checkOut } = await request.json();
 
-    // Connect to MongoDB
     await connectMongoDB();
 
-    // Create new booking in MongoDB
     const newBooking = await Booking.create({
       name,
       email,
@@ -21,10 +18,8 @@ export async function POST(request) {
       checkOut,
     });
 
-    // ✅ Generate Booking ID
     const bookingId = `PRATIK-${Math.floor(100000 + Math.random() * 900000)}`;
 
-    // ✅ Calculate total price
     const priceMap = {
       Regular: 899,
       Deluxe: 1799,
@@ -36,12 +31,11 @@ export async function POST(request) {
       (1000 * 60 * 60 * 24);
     const totalPrice = nights * pricePerNight;
 
-    // ✅ Send confirmation email
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // your Gmail
-        pass: process.env.EMAIL_PASS, // app password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS, 
       },
     });
 
@@ -68,7 +62,6 @@ export async function POST(request) {
       html: emailHTML,
     });
 
-    // ✅ Return success response with booking details
     return NextResponse.json(
       {
         success: true,
@@ -82,7 +75,6 @@ export async function POST(request) {
   } catch (error) {
     console.error("❌ Booking error:", error);
 
-    // Error response
     return NextResponse.json(
       {
         success: false,
