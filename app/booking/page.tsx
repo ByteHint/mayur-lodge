@@ -1,5 +1,13 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
+});
 
 export default function BookingPage() {
   const [form, setForm] = useState({
@@ -27,19 +35,11 @@ export default function BookingPage() {
   ) => {
     const { name, value } = e.target;
 
-    // Update price automatically when roomType changes
     if (name === "roomType") {
       const newPrice = getPriceFromRoomType(value);
-      setForm((prevForm) => ({
-        ...prevForm,
-        roomType: value,
-        price: newPrice,
-      }));
+      setForm((prev) => ({ ...prev, roomType: value, price: newPrice }));
     } else {
-      setForm((prevForm) => ({
-        ...prevForm,
-        [name]: value,
-      }));
+      setForm((prev) => ({ ...prev, [name]: value }));
     }
   };
 
@@ -56,74 +56,153 @@ export default function BookingPage() {
       const data = await res.json();
 
       if (data.success) {
-        alert("✅ Booking confirmed!");
+        alert(" Booking successful & confirmation email sent!");
       } else {
-        alert("❌ Booking failed: " + (data.error || "Unknown error"));
+        alert(" Booking failed: " + (data.error || "Unknown error"));
       }
     } catch (err) {
-      console.error("❌ Network error:", err);
+      console.error(" Network error:", err);
       alert("Something went wrong.");
     }
   };
 
   return (
-    <div className="max-w-xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Book a Room</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          name="name"
-          type="text"
-          placeholder="Your Name"
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="Your Email"
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          name="checkIn"
-          type="date"
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          name="checkOut"
-          type="date"
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <select
-          name="roomType"
-          value={form.roomType}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-        >
-          <option value="Regular">Regular</option>
-          <option value="Deluxe">Deluxe</option>
-          <option value="Family Hut">Family Hut</option>
-        </select>
-        <input
-          name="price"
-          type="text"
-          value={form.price}
-          disabled
-          className="w-full p-2 border rounded bg-gray-100 text-gray-700"
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          Book Now
-        </button>
-      </form>
+    <div className="min-h-screen bg-white flex items-center justify-center p-4">
+      <div className="bg-[#3C3C3C] rounded-[37px] w-[1325px] sm:h-[717px] h-[750px] shadow-2xl overflow-hidden p-4">
+        <div className="flex h-full w-full gap-4">
+          <div className="hidden sm:block sm:relative w-[380px] h-full rounded-[20px] overflow-hidden">
+            <Image
+              src="/contactUs.jpg"
+              alt="Booking Left Image"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-black opacity-30" />
+          </div>
+
+          <div className="relative flex-1 h-full rounded-[37px] overflow-hidden">
+            <Image
+              src="/contactUsright.jpg"
+              alt="Booking Background"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-[#3C3C3C]/90" />
+
+            <div className="absolute inset-0 flex flex-col justify-center text-white p-6">
+              <div className="text-center">
+                <h2
+                  className={`${montserrat.className} text-[30px] font-semibold`}
+                >
+                  Book a Room
+                </h2>
+                <p
+                  className={`${montserrat.className} text-[15px] text-[#FFFFFF99] mt-1 mb-10`}
+                >
+                  Fill in your details to confirm your booking
+                </p>
+              </div>
+
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-4 mt-4 w-full max-w-lg mx-auto"
+              >
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col flex-1 gap-1">
+                    <p className="text-[#FFFFFF99] text-sm">Name</p>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      value={form.name}
+                      onChange={handleChange}
+                      className="px-4 py-2 bg-transparent border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                      required
+                    />
+                  </div>
+                  <div className="flex flex-col flex-1 gap-1">
+                    <p className="text-[#FFFFFF99] text-sm">Email</p>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      value={form.email}
+                      onChange={handleChange}
+                      className="px-4 py-2 bg-transparent border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col flex-1 gap-1">
+                    <p className="text-[#FFFFFF99] text-sm">Check-In</p>
+                    <input
+                      type="date"
+                      name="checkIn"
+                      value={form.checkIn}
+                      onChange={handleChange}
+                      className="px-4 py-2 bg-transparent border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                      required
+                    />
+                  </div>
+                  <div className="flex flex-col flex-1 gap-1">
+                    <p className="text-[#FFFFFF99] text-sm">Check-Out</p>
+                    <input
+                      type="date"
+                      name="checkOut"
+                      value={form.checkOut}
+                      onChange={handleChange}
+                      className="px-4 py-2 bg-transparent border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <p className="text-[#FFFFFF99] text-sm">Room Type</p>
+                  <select
+                    name="roomType"
+                    value={form.roomType}
+                    onChange={handleChange}
+                    className="px-4 py-2 bg-transparent border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 text-white"
+                  >
+                    <option value="Regular" className="text-black">
+                      Regular
+                    </option>
+                    <option value="Deluxe" className="text-black">
+                      Deluxe
+                    </option>
+                    <option value="Family Hut" className="text-black">
+                      Family Hut
+                    </option>
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <p className="text-[#FFFFFF99] text-sm">Price</p>
+                  <input
+                    type="text"
+                    name="price"
+                    value={form.price}
+                    disabled
+                    className="px-4 py-2 bg-gray-700 text-white border border-gray-500 rounded-md"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full py-2 bg-yellow-400 text-black rounded-md font-semibold hover:bg-yellow-300 transition cursor-pointer"
+                >
+                  Book Now
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
