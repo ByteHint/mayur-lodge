@@ -24,7 +24,7 @@ export function Calendar22({ onDateChange }: { onDateChange: (date: Date) => voi
 
   return (
     <div className="flex flex-col gap-3 text-[#3C3C3C]">
-      <Label htmlFor="date" className={`${montserrat.className} px-1 text-[30px]`}>
+      <Label htmlFor="date" className={`${montserrat.className} px-1 sm:text-[30px] text-[16px]`}>
         Check In
       </Label>
       <Popover open={open} onOpenChange={setOpen}>
@@ -32,7 +32,7 @@ export function Calendar22({ onDateChange }: { onDateChange: (date: Date) => voi
           <Button
             variant="outline"
             id="date"
-            className="w-48 justify-between font-normal"
+            className={`w-48 justify-between ${montserrat.className} cursor-pointer`}
           >
             {date ? date.toLocaleDateString() : "Select date"}
             <ChevronDownIcon />
@@ -46,7 +46,7 @@ export function Calendar22({ onDateChange }: { onDateChange: (date: Date) => voi
             onSelect={(selected) => {
               if (selected) {
                 setDate(selected)
-                onDateChange(selected)  // ✅ notify parent
+                onDateChange(selected)  
               }
               setOpen(false)
             }}
@@ -63,7 +63,7 @@ export function Calendar23({ onDateChange }: { onDateChange: (date: Date) => voi
 
   return (
     <div className="flex flex-col gap-3 text-[#3C3C3C]">
-      <Label htmlFor="date" className={`${montserrat.className} px-1 text-[30px]`}>
+      <Label htmlFor="date" className={`${montserrat.className} px-1 sm:text-[30px] text-[16px]`}>
         Check Out
       </Label>
       <Popover open={open} onOpenChange={setOpen}>
@@ -71,7 +71,7 @@ export function Calendar23({ onDateChange }: { onDateChange: (date: Date) => voi
           <Button
             variant="outline"
             id="date"
-            className="w-48 justify-between font-normal"
+            className={`w-48 justify-between ${montserrat.className} cursor-pointer`}
           >
             {date ? date.toLocaleDateString() : "Select date"}
             <ChevronDownIcon />
@@ -85,7 +85,7 @@ export function Calendar23({ onDateChange }: { onDateChange: (date: Date) => voi
             onSelect={(selected) => {
               if (selected) {
                 setDate(selected)
-                onDateChange(selected)  // ✅ notify parent
+                onDateChange(selected)  
               }
               setOpen(false)
             }}
