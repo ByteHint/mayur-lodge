@@ -56,7 +56,7 @@ export default function BookingPage() {
       const data = await res.json();
 
       if (data.success) {
-        alert("✅ Booking confirmed!");
+        alert("✅ Booking successful & confirmation email sent!");
       } else {
         alert("❌ Booking failed: " + (data.error || "Unknown error"));
       }
