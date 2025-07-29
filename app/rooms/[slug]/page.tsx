@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaWifi, FaRegBell, FaTv, FaUsers } from "react-icons/fa";
 
-// Load font
 const kugile = localFont({
   src: "../../fonts/Kugile_Demo.ttf",
   variable: "--font-kugile",
@@ -24,8 +23,8 @@ const roomDetailsData = [
       { name: "Entertainment", icon: FaTv },
       { name: "Accommodates 1-2 people", icon: FaUsers },
     ],
-    mainImage: "/Room1.jpg",
-    gallery: ["/pic3.jpg", "/pic4.jpg", "/pic5.jpg"],
+    mainImage: "/regular_1.jpg",
+    gallery: ["/regular_1.jpg", "/regular_2.jpg", "/deluxroom2.jpg"],
   },
   {
     slug: "deluxe-room",
@@ -43,8 +42,8 @@ const roomDetailsData = [
     gallery: ["/deluxroom1.jpg", "/deluxroom2.jpg", "/deluxroom3.jpg"],
   },
   {
-    slug: "family-hut",
-    title: "Family Hut",
+    slug: "twin-room",
+    title: "Twin Bed with balcony",
     description:
       "Our Family Hut offers ample space and privacy, perfect for families or small groups. Features multiple beds and a private outdoor area.",
     price: "₹2299 / night",
@@ -54,17 +53,15 @@ const roomDetailsData = [
       { name: "Entertainment", icon: FaTv },
       { name: "Accommodates 4-6 people", icon: FaUsers },
     ],
-    mainImage: "/Room3.jpg",
-    gallery: ["/Room3.jpg", "/pic4.jpg", "/pic7.jpg"],
+    mainImage: "/twin_3.jpg",
+    gallery: ["/twin_3.jpg", "/twin_2.jpg", "/twin_4.jpg"],
   },
 ];
 
-// ✅ Generate static params for dynamic routes
 export async function generateStaticParams() {
   return roomDetailsData.map((room) => ({ slug: room.slug }));
 }
 
-// ✅ Metadata function (params as Promise!)
 export async function generateMetadata({
   params,
 }: {
@@ -80,7 +77,6 @@ export async function generateMetadata({
   };
 }
 
-// ✅ MAIN PAGE COMPONENT (params as Promise!)
 export default async function RoomDetailPage({
   params,
 }: {

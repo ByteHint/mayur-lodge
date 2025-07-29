@@ -67,7 +67,6 @@ export default function UserReview() {
               key={idx}
               className="bg-[#F8F8F8] w-[320px] sm:w-[360px] rounded-2xl p-5 flex flex-col gap-4 shadow-sm shrink-0"
             >
-              {/* Header */}
               <div className="flex justify-between items-start gap-3">
                 <div className="flex items-center gap-3">
                   <Avatar className="w-12 h-12">
@@ -97,7 +96,6 @@ export default function UserReview() {
                 <span className="text-xs sm:text-sm text-gray-500">{r.date}</span>
               </div>
 
-              {/* Title & Comment */}
               <h4 className="text-sm sm:text-base font-semibold">{r.title}</h4>
               <p className="text-sm sm:text-base text-gray-700">{r.comment}</p>
             </div>
@@ -105,7 +103,6 @@ export default function UserReview() {
         </div>
       </div>
 
-      {/* Add animation keyframes */}
       <style jsx>{`
         @keyframes scroll {
           0% {

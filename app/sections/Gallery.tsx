@@ -1,6 +1,7 @@
 "use client";
 
 import localFont from "next/font/local";
+import { Poppins as PoppinsFont } from 'next/font/google';
 import { Heart, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -8,6 +9,11 @@ const kugile = localFont({
   src: "../fonts/Kugile_Demo.ttf",
   variable: "--font-kugile",
   display: "swap",
+});
+
+const poppins = PoppinsFont({
+  weight: ['400'],
+  subsets: ['latin'],
 });
 
 interface RoomCardData {
@@ -25,7 +31,7 @@ const roomCards: RoomCardData[] = [
     originalPrice: "₹985",
     discountedPrice: "₹899",
     button: "Click to View",
-    src: "/Room1.jpg",
+    src: "/regular_1.jpg",
     slug: "regular-room",
   },
   {
@@ -33,16 +39,16 @@ const roomCards: RoomCardData[] = [
     originalPrice: "₹2150",
     discountedPrice: "₹1799",
     button: "Click to View",
-    src: "/Room2.jpg",
+    src: "/deluxroom1.jpg",
     slug: "deluxe-room",
   },
   {
-    title: "Family Hut",
+    title: "Twin Bed with Balcony",
     originalPrice: "₹3680",
     discountedPrice: "₹2299",
     button: "Click to View",
-    src: "/Room3.jpg",
-    slug: "family-hut",
+    src: "/twin_1.jpg",
+    slug: "twin-room",
   },
 ];
 
@@ -81,7 +87,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ card }) => (
 
     <div className="relative z-10 p-4 pt-0 flex justify-center">
       <Link href={`/rooms/${card.slug}`} passHref className="w-full">
-        <button className="bg-[#e1e1e1] bg-opacity-20 backdrop-filter backdrop-blur-sm text-[#3c3c3c] rounded-full py-2 px-2 text-sm flex items-center cursor-pointer justify-center hover:bg-gray-400 focus:outline-none border border-white border-opacity-30 w-full">
+        <button className={`${poppins.className} bg-[#e1e1e1] bg-opacity-20 backdrop-filter backdrop-blur-sm text-[#3c3c3c] rounded-full py-2 px-2 text-sm flex items-center cursor-pointer justify-center hover:bg-gray-400 focus:outline-none border border-white border-opacity-30 w-full`}>
           {card.button} <span className="ml-2">&#8594;</span>
         </button>
       </Link>

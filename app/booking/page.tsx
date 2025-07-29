@@ -23,7 +23,7 @@ export default function BookingPage() {
     switch (roomType) {
       case "Deluxe":
         return "₹1799/per night";
-      case "Family Hut":
+      case "Twin bed with balcony":
         return "₹2500/per night";
       default:
         return "₹899/per night";
@@ -175,8 +175,8 @@ export default function BookingPage() {
                     <option value="Deluxe" className="text-black">
                       Deluxe
                     </option>
-                    <option value="Family Hut" className="text-black">
-                      Family Hut
+                    <option value="Twin" className="text-black">
+                      Twin bed with balcony
                     </option>
                   </select>
                 </div>

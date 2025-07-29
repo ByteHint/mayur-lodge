@@ -26,9 +26,7 @@ export default function LocationSection() {
         Our Location
       </h2>
 
-      {/* Flex container for image and pin */}
       <div className="flex flex-col lg:flex-row gap-10 items-start">
-        {/* Location Image Block */}
         <div
           className="relative rounded-[20px] overflow-hidden shadow-xl w-full sm:w-[671px] sm:h-[718px] h-[500px] hover:scale-105 transition-all delay-150 duration-300 ease-in-out"
         >
@@ -89,7 +87,6 @@ export default function LocationSection() {
               }}
             />
 
-            {/* AnimatedPinDemo on top of blurred background */}
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="w-[90%] sm:w-[80%]">
                 <AnimatedPinDemo />
