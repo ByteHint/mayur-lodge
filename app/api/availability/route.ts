@@ -1,7 +1,6 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 
-// Dummy
 const allRooms = [101, 102, 103, 104, 105]
 
 const existingBookings = [
